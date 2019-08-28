@@ -1,5 +1,27 @@
 const soberApp = {};
 
+let timer = document.getElementById('timer');
+let toggleBtn = document.getElementById('toggle');
+let resetBtn = document.getElementById('reset');
+
+let watch = new Stopwatch(timer);
+
+toggleBtn.addEventListener('click', function() {
+    // if (watch.isOn) {
+    //     watch.stop();
+    //     toggleBtn.textContent = 'Start';
+    // } 
+    // else {
+        watch.start();
+    //     toggleBtn.textContent = 'Stop';
+    // }
+});
+
+resetBtn.addEventListener('click', function () {
+    watch.reset();
+});
+
+
 // this is the link that accesses the api
 soberApp.baseUrl = `https://api.kanye.rest?format=text`;
 
