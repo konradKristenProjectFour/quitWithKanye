@@ -32,24 +32,29 @@ class Stopwatch {
 
         function timeFormatter(timeInMilliseconds) {
           let time = new Date(timeInMilliseconds);
+
+          console.log(time);
+
+
+          let hours = (time.getHours() - 19).toString();
           let minutes = time.getMinutes().toString();
           let seconds = time.getSeconds().toString();
-          let milliseconds = time.getMilliseconds().toString();
+
+          if (hours.length < 2) {
+            hours = "0" + hours;
+          }
 
           if (minutes.length < 2) {
             minutes = "0" + minutes;
           }
 
-          if (seconds.length < 2) {
+          while (seconds.length < 2) {
             seconds = "0" + seconds;
           }
 
-          while (milliseconds.length < 3) {
-            milliseconds = "0" + milliseconds;
-          }
-
-          return minutes + " : " + seconds + " . " + milliseconds;
+          return hours + " : " + minutes + " . " + seconds;
         }
+
 
         this.start = function() {
           if (!this.isOn) {
