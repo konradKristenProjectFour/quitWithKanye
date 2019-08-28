@@ -4,9 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+
+    <link rel="stylesheet" type="text/css" href="./styles/styles.css">
+    <title>Quit with Ye</title>
 </head>
 <body>
-    
+    <header>
+
+    </header>
+
+    <main>
+
+        <section class="welcome">
+            <h1>Want to quit with Ye?</h1>
+            <p>Description about quitting / motivation. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi atque nihil tempore veniam ipsum recusandae deserunt necessitatibus inventore, natus porro distinctio obcaecati aliquid ut ducimus pariatur quam vitae facilis est.</p>
+            <form action="submit">
+                <label for="username">Name?</label>
+                <input type="username" name="username" id="username">
+                
+                <label for="habit">What's your vice?</label>
+                <input type="text" name="habit" id="habit">
+                
+                <label for="submit">Submit</label>
+                <input type="submit" name="submit">
+            </form>
+        </section>
+
+        <section class="dashboard">
+            <div class="clock">
+                <!-- clock placeholder -->
+                <h1 id="timer">00 : 00 . 000 </h1>
+                <button id="toggle">Start</button>
+                <button id="reset">Reset</button>
+            </div><!-- /.clock -->
+
+            <div class="quotes">
+                <div class="kanyeButton">
+                    <img>
+                </div>
+                <div class="quoteContainer">
+                </div>    <!-- dynamic content -->
+            </div><!-- /.quotesContainer -->
+
+            <div class="trophyCase">
+                <ul>
+                    <!-- <li>15 seconds</li>
+                    <li>30 seconds</li>
+                    <li>45 seconds</li> -->
+                </ul>
+            </div><!-- /.trophyCase -->
+            
+            
+            <label for="reset"></label>
+            <input id="reset" class="reset"></input>
+
+            <div class="kanye"><img></div>
+        </section>
+
+        <section class="trophy">
+        </section>
+
+    </main>
+
+    <footer>
+
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+
+    <script src="scripts/script.js"></script>
+    <script src="scripts/stopwatch.js"></script>
 </body>
 </html>
