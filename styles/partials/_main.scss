@@ -1,3 +1,25 @@
+html {
+    font-size: 10px; 
+}
+
 body {
-    background: lightgray;
+    margin: 0 auto; 
+    background: black; 
+    color: white;
+    font-size: 2rem; 
+}
+
+main {
+    background-image: url("")
+}
+
+.kanyeButton {
+    width: 100px; 
+    height: 100px; 
+    background-color: red;
+}
+
+h1 {
+    font-size: 10rem;
+    text-transform: uppercase; 
 }
