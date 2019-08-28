@@ -6,6 +6,10 @@ let resetBtn = document.getElementById('reset');
 
 let watch = new Stopwatch(timer);
 
+// console.log(timer.textContent);
+
+console.log();
+
 toggleBtn.addEventListener('click', function() {
     // if (watch.isOn) {
     //     watch.stop();
@@ -43,13 +47,9 @@ soberApp.insertQuote = function(newQuote) {
     $(".quoteContainer").html(`<p>${newQuote}</p>`)
 };
 
-soberApp.stopWatch = function() {
-    let now = Date.now();
-    
-
-
-};
-
+// soberApp.stopWatch = function() {
+//     let now = Date.now();
+// };
 
 soberApp.init = () => {
     soberApp.getQuotes();
