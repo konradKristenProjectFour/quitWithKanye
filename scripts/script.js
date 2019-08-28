@@ -51,16 +51,34 @@ soberApp.insertQuote = function(newQuote) {
 //     let now = Date.now();
 // };
 
+soberApp.clickKanye = function() {
+    $(".kanyeButton").on("click", function() {
+        soberApp.getQuotes();
+    })
+}
+
+soberApp.formSubmit = () => {
+    $("form").on("submit", function(event) {
+      // event.preventDefault prevents form submit button from refreshing page automatically
+      
+    event.preventDefault();
+    console.log('test');
+    
+    $(".welcome").addClass("removeWelcome");
+    
+    })
+};
+
+
+
 soberApp.init = () => {
     soberApp.getQuotes();
-    soberApp.insertQuote;
+    soberApp.insertQuote(); // brackets were missing?
+    soberApp.clickKanye(); 
+    soberApp.formSubmit(); 
 };
 
 $(document).ready(function() {
     soberApp.init();
 
-    $(".kanyeButton").on("click", function() {
-
-        soberApp.getQuotes();
-    })
 });

@@ -8,16 +8,25 @@
 $primary: white;
 $secondary: rgba(0, 0, 0, 0);
 $accent: #27EC4D;
+$specialFont: 'Nanum Pen Script', cursive;
 
 html {
-    font-family: 'Nanum Pen Script', cursive;
+    font-family: $specialFont
 } 
 
-h1 {
+h1, 
+h2 {
   font-size: 7rem;
   text-transform: uppercase;
   color: $accent;
   margin-bottom: 10vh;
+  span {
+    display: block; 
+  }
+}
+
+h2 {
+  font-size: 4rem; 
 }
 
 p {

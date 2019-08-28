@@ -6,34 +6,32 @@ body {
   margin: 0 auto;
   color: white;
   font-size: 2rem;
+  position: relative; 
 }
 
-main {
+.welcome, 
+.dashboard {
   background-image: url("../images/background.png");
   background-repeat: no-repeat;
   background-position: center;
-  height: 100vh;
   background-size: cover;
-}
-
-.kanyeButton {
-  width: 100px;
-  height: 100px;
-  background-color: red;
+  height: 100vh;
+  padding: 5% 0;
 }
 
 .welcome {
     text-align: center;
-    // border: 5px solid white;
-    border-radius: 20px;
-    // background-color: rgba(0, 0, 0, 0.1);
-    padding: 5% 0;
+    // background-color: rgba(0, 0, 0, 0.9);
+}
+
+.removeWelcome {
+  position: absolute; 
+  top: -100vh; 
 }
 
 .textBoxes {
     display: flex;
     flex-direction: column;
-    // justify-content: space-around;
     align-items: center;
 }
 
@@ -61,4 +59,32 @@ input[type="submit"] {
     text-align: center;
 }
 
+.quoteContainer, 
+.clock {
+  color: white; 
+  border: 5px solid $accent;  
+  padding: 5%; 
+  background: black;
+  margin-bottom: 5vh;  
+}
 
+.clock {
+  border: none; 
+  h2 {
+    margin-bottom: 0;
+  }
+}
+
+.kanyeButton {
+  width: 250px;
+  height: 250px;
+  border-radius: 100%; 
+  background: $accent; 
+}
+
+img {
+  display: block; 
+  max-width: 100%; 
+  border-radius: 50%; 
+  border: 5px solid $accent; 
+}
