@@ -58,4 +58,9 @@ soberApp.init = () => {
 
 $(document).ready(function() {
     soberApp.init();
+
+    $(".kanyeButton").on("click", function() {
+
+        soberApp.getQuotes();
+    })
 });

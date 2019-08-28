@@ -222,18 +222,45 @@ textarea {
 }
 
 html {
+  font-family: 'Nanum Pen Script', cursive;
+}
+
+h1 {
+  font-size: 7rem;
+  text-transform: uppercase;
+  color: #27EC4D;
+  margin-bottom: 10vh;
+}
+
+p {
+  line-height: 1.6;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 1.8rem;
+}
+
+.wrapper {
+  width: 80%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+html {
   font-size: 10px;
 }
 
 body {
   margin: 0 auto;
-  background: black;
   color: white;
   font-size: 2rem;
 }
 
 main {
-  background-image: url("");
+  background-image: url("../images/background.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  background-size: cover;
 }
 
 .kanyeButton {
@@ -242,7 +269,60 @@ main {
   background-color: red;
 }
 
-h1 {
-  font-size: 10rem;
+.welcome {
+  text-align: center;
+  border-radius: 20px;
+  padding: 5% 0;
+}
+
+.textBoxes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+input[type="username"], input[type="text"] {
+  color: white;
+  background: rgba(0, 0, 0, 0);
+  border: none;
+  border-bottom: 1px solid white;
+  padding: 5px;
+  width: 48%;
+  margin-top: 10vh;
+}
+
+input[type="submit"] {
+  margin-top: 10vh;
+  background: rgba(0, 0, 0, 0);
+  padding: 2% 7%;
+  border: 1px solid white;
+  color: white;
   text-transform: uppercase;
+}
+
+.placeholderText::-webkit-input-placeholder {
+  opacity: 1;
+  text-align: center;
+}
+
+.placeholderText:-ms-input-placeholder {
+  opacity: 1;
+  text-align: center;
+}
+
+.placeholderText::-ms-input-placeholder {
+  opacity: 1;
+  text-align: center;
+}
+
+.placeholderText::placeholder {
+  opacity: 1;
+  text-align: center;
 }

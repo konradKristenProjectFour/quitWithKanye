@@ -1,0 +1,35 @@
+// TYPOGRAPHY
+
+// font-family: 'Nanum Pen Script', cursive;
+// font-family: 'Open Sans', sans-serif;
+
+// COLORS
+
+$primary: white;
+$secondary: rgba(0, 0, 0, 0);
+$accent: #27EC4D;
+
+html {
+    font-family: 'Nanum Pen Script', cursive;
+} 
+
+h1 {
+  font-size: 7rem;
+  text-transform: uppercase;
+  color: $accent;
+  margin-bottom: 10vh;
+}
+
+p {
+    line-height: 1.6;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 1.8rem;
+    // letter-spacing: 0.15rem;
+}
+
+.wrapper {
+  width: 80%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
