@@ -7,8 +7,6 @@
 
     <link href="https://fonts.googleapis.com/css?family=Nanum+Pen+Script%7COpen+Sans:300,400,700&display=swap"
         rel="stylesheet">
-    
-    
 
     <link rel="stylesheet" type="text/css" href="./styles/styles.css">
     <title>Quit with Ye</title>
@@ -19,12 +17,11 @@
     </header>
 
     <main>
-
-        <div class="wrapper">
-            <section class="welcome">
-                <h1>Want to quit with Ye?</h1>
+        <section class="welcome">
+            <div class="wrapper">
+                <h1>Want to quit<span> with Ye?</span></h1>
                 <p>Description about quitting / motivation. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi atque nihil tempore veniam ipsum recusandae deserunt necessitatibus inventore, natus porro distinctio obcaecati aliquid ut ducimus pariatur quam vitae facilis est.</p>
-                <form action="submit" class="initialForm">
+                <form action="#" method="#" class="initialForm" name="initialForm">
                     <div class="textBoxes">
                         <label class="visuallyHidden" for="username">Name?</label>
                         <input class="placeholderText" type="username" name="username" id="username" placeholder="Enter your name">
@@ -36,23 +33,24 @@
                     <label class="visuallyHidden" for="submit">Submit</label>
                     <input type="submit" value="submit" name="submit">
                 </form>
-            </section>
-    
-            <section class="dashboard">
+            </div><!-- /.wrapper-->
+        </section><!-- /.welcome -->
+
+        <section class="dashboard">
+            <div class="wrapper">
+                <h2>Start now</h2>
                 <div class="clock">
-                    <!-- clock placeholder -->
-                    <h1 id="timer">00 : 00 . 00 </h1>
+                    <h2 id="timer">00 : 00 : 00 </h2>
                     <button id="toggle">Start</button>
                     <button id="reset">Reset</button>
                 </div><!-- /.clock -->
     
                 <div class="quotes">
+                    <div class="quoteContainer"></div> 
                     <div class="kanyeButton">
-                        <img>
+                        <img src="images/1.png" alt="Picture of Kanye smiling.">
                     </div>
-                    <div class="quoteContainer">
-                    </div>    <!-- dynamic content -->
-                </div><!-- /.quotesContainer -->
+                </div><!-- /.quotes -->
     
                 <div class="trophyCase">
                     <ul>
@@ -61,15 +59,11 @@
                         <li>45 seconds</li> -->
                     </ul>
                 </div><!-- /.trophyCase -->
-        
-    
-                <div class="kanye"><img></div>
-            </section>
-    
-            <section class="trophy">
-            </section>
-        </div>
+            </div><!-- /.wrapper-->
+        </section><!-- /.dashboard -->
 
+        <section class="trophy">
+        </section><!-- /.trophy -->
     </main>
 
     <footer>
