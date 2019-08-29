@@ -21,10 +21,15 @@ class Stopwatch {
 
     //   console.log(formattedTime);
 
-    //   if (watchElement.textContent.slice(-1) === '5') {
-    //       console.log('Success');
-    //       soberApp.getQuotes();
-    //   }
+      if (watchElement.textContent.slice(-1) === '5') {
+          console.log('Success');
+          soberApp.getQuotes();
+      }
+
+      // if (watchElement.textContent.slice(-1) === '5') {
+      //   counter += userInput;
+      //   select the box with the money, html"with counter variable"
+      // }
 
     };
 

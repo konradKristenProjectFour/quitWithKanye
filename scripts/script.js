@@ -63,7 +63,9 @@ soberApp.formSubmit = () => {
       
     event.preventDefault();
 
-    console.log('test');
+
+
+    // console.log('test');
     
     $(".welcome").addClass("removeSection");
     $(".dashboard").removeClass("removeSection");
