@@ -1,94 +1,59 @@
 const soberApp = {};
 
-let timer = document.getElementById('timer');
+let timer = document.getElementById('timer'); 
 let toggleBtn = document.getElementById('toggle');
 let resetBtn = document.getElementById('reset');
 let watch = new Stopwatch(timer);
 
-toggleBtn.addEventListener('click', function() {
-    // if (watch.isOn) {
-    //     watch.stop();
-    //     toggleBtn.textContent = 'Start';
-    // } 
-    // else {
-        watch.start();
-    //     toggleBtn.textContent = 'Stop';
-    // }
-});
-
-resetBtn.addEventListener('click', function () {
-    watch.reset();
-});
-
-// Load api
+// Link to api
 soberApp.baseUrl = `https://api.kanye.rest?format=text`;
 
-// this is the function that retrieves the data from the api
+// Retrieve data from api
 soberApp.getQuotes = function () {
     $.ajax({
         url: soberApp.baseUrl,
         method: "GET",
         datatype: "json"
     }).then(function (result) {
-        // result is the data we received
-        soberApp.insertQuote(result); 
-        // we feed the result into our insertQuote function
+        // feed result into insertQuote if it excludes fuck
+        if (result.indexOf("fuck") === -1) {
+            soberApp.insertQuote(result); 
+        } else {
+            soberApp.getQuotes(); 
+        }
     });
 };
 
-// this plugs into quoteContainer class
+// plugs insertQuote result into quoteContainer
 soberApp.insertQuote = function(newQuote) {
     $(".quoteContainer").html(`<p>${newQuote}</p>`)
 };
 
-// soberApp.stopWatch = function() {
-//     let now = Date.now();
-// };
-
+//on demand quotes
 soberApp.clickKanye = function() {
     $(".kanyeButton").on("click", function() {
         soberApp.getQuotes();
     })
 }
 
+//listen for submit, save variables, switch to next screen
 soberApp.formSubmit = () => {
     $("form").on("submit", function(event) {
-    
-    // prevent default page refresh
     event.preventDefault(); 
+    watch.start();
     
-    //declare variables for user inputs
-    const username = $('input[name="username"]').val();
-    const habit = $('input[name="habit"]').val();
-    const spend = $('input[name="spend"]').val();
-
-    //move welcome form off page to show dashboard
-    $(".welcome").addClass("removeSection");
-    $(".dashboard").removeClass("removeSection");
-
-    })
-};
-
-soberApp.formSubmit = () => {
-    $("form").on("submit", function(event) {
-    
-    // prevent default page refresh
-    event.preventDefault(); 
-    
-    //declare variables for user inputs
+    //declare variables based on user inputs
     let userName = soberApp.retrieveUserName();
     let habit = soberApp.retrieveHabit();
     let spend = soberApp.retrieveSpend();
 
-    console.log(userName);
-
     //move welcome form off page to show dashboard
     $(".welcome").addClass("removeSection");
     $(".dashboard").removeClass("removeSection");
-
     })
 };
 
+//variables are declared outside submit form to be used in Stopwatch
 soberApp.retrieveUserName = () => {
     return $('input[name="username"]').val();
 }
@@ -101,20 +66,19 @@ soberApp.retrieveSpend = () => {
     return Number($('input[name="spend"]').val());
 }
 
-soberApp.counter = 0;
-
 //reset button refreshes page
 soberApp.formReset = () => {
-  $("form").on("reset", function(event) {
-
-    $(".welcome").removeClass("removeSection");
-    $(".dashboard").addClass("removeSection");
-  });
+    $("form").on("reset", function(event) {
+        watch.reset();
+        $(".welcome").removeClass("removeSection");
+        $(".dashboard").addClass("removeSection");
+        $("ul").html("");
+    });
 };
 
 soberApp.init = () => {
     soberApp.getQuotes();
-    soberApp.insertQuote(); // brackets were missing?
+    soberApp.insertQuote();
     soberApp.clickKanye(); 
     soberApp.formSubmit(); 
     soberApp.formReset();
@@ -123,3 +87,25 @@ soberApp.init = () => {
 $(document).ready(function() {
     soberApp.init();
 });
+
+
+
+
+
+
+//list for click on submit button
+// toggleBtn.addEventListener('click', function() {
+//     watch.start();
+// });
+
+// resetBtn.addEventListener('click', function () {
+//     watch.reset();
+// });
+
+// //reset button refreshes page
+// soberApp.formReset = () => {
+//     $("form").on("reset", function(event) {
+//         $(".welcome").removeClass("removeSection");
+//         $(".dashboard").addClass("removeSection");
+//     });
+// };
