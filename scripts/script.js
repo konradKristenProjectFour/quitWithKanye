@@ -1,16 +1,9 @@
-
-
 const soberApp = {};
 
 let timer = document.getElementById('timer');
 let toggleBtn = document.getElementById('toggle');
 let resetBtn = document.getElementById('reset');
-
 let watch = new Stopwatch(timer);
-
-// console.log(timer.textContent);
-
-console.log();
 
 toggleBtn.addEventListener('click', function() {
     // if (watch.isOn) {
@@ -27,8 +20,7 @@ resetBtn.addEventListener('click', function () {
     watch.reset();
 });
 
-
-// this is the link that accesses the api
+// Load api
 soberApp.baseUrl = `https://api.kanye.rest?format=text`;
 
 // this is the function that retrieves the data from the api
@@ -106,7 +98,7 @@ soberApp.retrieveHabit = () => {
 }
 
 soberApp.retrieveSpend = () => {
-    return $('input[name="spend"]').val();
+    return Number($('input[name="spend"]').val());
 }
 
 soberApp.counter = 0;

@@ -26,17 +26,24 @@ class Stopwatch {
       // let newSpend = soberApp.retrieveSpend();
       // console.log(newSpend);
 
-      if (watchElement.textContent.slice(-1) === "5") {
-        soberApp.getQuotes();
+      const updateTime = 1;
 
-        // if (counter < 9) {
-
+      if (
+        watchElement.textContent.slice(-2) % updateTime === 0 &&
+        watchElement.textContent.slice(-2)
+      < updateTime*10) {
         $(".trophyList").append(`<li><i class="fas fa-trophy"></i></li>`);
-        // counter++;
-        // }
       }
 
-      if (soberApp.retrieveSpend()
+      if (watchElement.textContent.slice(-2) % updateTime === 0) {
+
+        soberApp.getQuotes();
+
+        $(".money").html(
+          `<p>${(watchElement.textContent.slice(-2) / updateTime) *
+            soberApp.retrieveSpend()}</p>`
+        );
+      }
 
 
     };
