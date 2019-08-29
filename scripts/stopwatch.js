@@ -19,22 +19,27 @@ class Stopwatch {
       formattedTime = timeFormatter(time);
       watchElement.textContent = formattedTime;
 
-      let counter;
-      //add trophy to trophyList
+      // add trophy to trophyList, but set a max
+
+      // add money saved to .money
+
+      // let newSpend = soberApp.retrieveSpend();
+      // console.log(newSpend);
 
       if (watchElement.textContent.slice(-1) === "5") {
-
-        console.log("test");
-
         soberApp.getQuotes();
 
-        if (counter < 9) {
-          $(".trophyList").append(`<li><i class="fas fa-trophy"></i></li>`);
-        }
-      }
-    };
+        // if (counter < 9) {
 
-    console.log(username);
+        $(".trophyList").append(`<li><i class="fas fa-trophy"></i></li>`);
+        // counter++;
+        // }
+      }
+
+      if (soberApp.retrieveSpend()
+
+
+    };
 
     // take the time now from the javascript time function
     // time passed is equal to the
