@@ -3,7 +3,7 @@ class Stopwatch {
     let time = 0;
     let interval;
     let offset;
-    
+
     this.isOn = false;
 
     const update = () => {
@@ -19,35 +19,27 @@ class Stopwatch {
       formattedTime = timeFormatter(time);
       watchElement.textContent = formattedTime;
 
-      let counter;
-      //add trophy to trophyList
+      // add trophy to trophyList, but set a max
 
-      // $("form").on("submit", function(event) {
-    
-      //   // prevent default page refresh
-      //   event.preventDefault(); 
-        
-      //   //declare variables for user inputs
-      //   const username = $('input[name="username"]').val();
-      //   const habit = $('input[name="habit"]').val();
-      //   const spend = $('input[name="spend"]').val();
+      // add money saved to .money
 
-      // }
+      // let newSpend = soberApp.retrieveSpend();
+      // console.log(newSpend);
 
-      if (watchElement.textContent.slice(-1) === '5') {
-        counter++;
-
+      if (watchElement.textContent.slice(-1) === "5") {
         soberApp.getQuotes();
 
-        if (counter < 9) {
-          $(".trophyList").append(`<li><i class="fas fa-trophy"></i></li>`)
-        }
-      
+        // if (counter < 9) {
+
+        $(".trophyList").append(`<li><i class="fas fa-trophy"></i></li>`);
+        // counter++;
+        // }
       }
 
-    };
+      if (soberApp.retrieveSpend()
 
-    console.log(username); 
+
+    };
 
     // take the time now from the javascript time function
     // time passed is equal to the
@@ -97,7 +89,6 @@ class Stopwatch {
     };
 
     this.reset = function() {
-
       this.stop();
       time = 0;
       update(time);

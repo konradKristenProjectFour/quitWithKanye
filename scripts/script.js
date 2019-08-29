@@ -1,3 +1,5 @@
+
+
 const soberApp = {};
 
 let timer = document.getElementById('timer');
@@ -82,11 +84,11 @@ soberApp.formSubmit = () => {
     event.preventDefault(); 
     
     //declare variables for user inputs
-    // const username = $('input[name="username"]').val();
-    // const habit = $('input[name="habit"]').val();
-    // const spend = $('input[name="spend"]').val();
+    let userName = soberApp.retrieveUserName();
+    let habit = soberApp.retrieveHabit();
+    let spend = soberApp.retrieveSpend();
 
-    soberApp.retrieveInput();
+    console.log(userName);
 
     //move welcome form off page to show dashboard
     $(".welcome").addClass("removeSection");
@@ -95,13 +97,19 @@ soberApp.formSubmit = () => {
     })
 };
 
-soberApp.retrieveInput = () => {
-    const username = $('input[name="username"]').val();
-    const habit = $('input[name="habit"]').val();
-    const spend = $('input[name="spend"]').val();
-
-    console.log(username);
+soberApp.retrieveUserName = () => {
+    return $('input[name="username"]').val();
 }
+
+soberApp.retrieveHabit = () => {
+    return $('input[name="habit"]').val();
+}
+
+soberApp.retrieveSpend = () => {
+    return $('input[name="spend"]').val();
+}
+
+soberApp.counter = 0;
 
 //reset button refreshes page
 soberApp.formReset = () => {
