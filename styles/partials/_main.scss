@@ -11,22 +11,23 @@ body {
 
 .welcome, 
 .dashboard {
-  background-image: url("../images/background.png");
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  url("../images/background.png"),
+  rgba(0, 0, 0, 0.5);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   height: 100vh;
-  padding: 5% 0;
+  padding: 5vh 0;
 }
 
 .welcome {
     text-align: center;
-    // background-color: rgba(0, 0, 0, 0.9);
 }
 
-.removeWelcome {
+.removeSection {
   position: absolute; 
-  top: -100vh; 
+  top: -2000px; 
 }
 
 .textBoxes {
@@ -35,56 +36,164 @@ body {
     align-items: center;
 }
 
-input[type="username"], input[type="text"] {
+input[type="username"], input[type="text"], input[type="number"] {
     color: white;
     background: rgba(0, 0, 0, 0);
     border: none;
-    border-bottom: 1px solid white;
-    padding: 5px;
-    width: 48%;
-    margin-top: 10vh;
+    border-bottom: 2px solid white;
+    padding: 5px 0;
+    width: 35%;
+    min-width: 300px;
+    margin-top: 5vh;
+    text-align: center;
+}
+
+input[type="username"], input[type="text"], input[type="number"] {
+    &:hover {
+        border-bottom: 2px solid $accent;
+    }
 }
 
 input[type="submit"] {
     margin-top: 10vh;
+    border: 2px solid white;
+    color: $primary;
+    // border-radius: 15px;
+
+}
+
+input[type="reset"] {
+    border: none;
+    color: $accent;
+}
+
+input[type="submit"], input[type="reset"] {
+    
     background: $secondary;
-    padding: 2% 7%;
-    border: 1px solid $primary;
-    color: white;
+    padding: 10px 7%;
+    
     text-transform: uppercase;
+    
+}
+
+input[type="submit"]:hover {
+    border: 2px solid $accent;
+    color: $accent;
 }
 
 .placeholderText::placeholder {
-    opacity:1;
+    opacity: 0.7;
     text-align: center;
-}
-
-.quoteContainer, 
-.clock {
-  color: white; 
-  border: 5px solid $accent;  
-  padding: 5%; 
-  background: black;
-  margin-bottom: 5vh;  
 }
 
 .clock {
   border: none; 
+  margin: 0;
+  
   h2 {
     margin-bottom: 0;
   }
 }
 
+.dashboardSub {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.quotes {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.kanyeContainer {
+    flex: 1 0 120px;
+}
+
 .kanyeButton {
-  width: 250px;
-  height: 250px;
-  border-radius: 100%; 
-  background: $accent; 
+//   border-radius: 100%; 
+//   background: $accent; 
+  width: 120px;
+}
+
+.quoteContainer {
+    padding-right: 15px;
+    flex: 1 0 calc(100% - 120px);
+    text-align: right;
+
+    p {
+        padding: 4% 4% 0 0;
+    }
 }
 
 img {
   display: block; 
-  max-width: 100%; 
-  border-radius: 50%; 
-  border: 5px solid $accent; 
+  width: 100%; 
+
+  transform: rotate(25deg);
+//   border-radius: 50%; 
+//   border: 2px solid $accent; 
+
+// -webkit-filter: drop-shadow(2px 2px 0 $accent)
+//                   drop-shadow(-2px -2px 0 $accent);
+  filter: drop-shadow(2px 2px 0 $accent) 
+          drop-shadow(2px -2px 0 $accent)
+          drop-shadow(-2px -2px 0 $accent)
+          drop-shadow(-2px 2px 0 $accent);
 }
+
+img:hover {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0) rotate(25deg);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0) rotate(25deg);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0) rotate(25deg);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0) rotate(25deg);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0) rotate(25deg);
+  }
+}
+
+.lowerDash {
+    display: flex;
+    justify-content: space-between;
+}
+
+.trophy, .money, .reset {
+    width: 32%;
+    border: 2px solid $accent;
+    border-radius: 15px;
+}
+
+.money {
+    p {
+        color: $accent;
+        font-size: 6rem;
+        margin: 3vh 0;
+        text-align: center;
+    }
+}
+
+.reset {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+
+

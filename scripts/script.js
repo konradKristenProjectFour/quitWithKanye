@@ -62,13 +62,25 @@ soberApp.formSubmit = () => {
       // event.preventDefault prevents form submit button from refreshing page automatically
       
     event.preventDefault();
+
     console.log('test');
     
-    $(".welcome").addClass("removeWelcome");
+    $(".welcome").addClass("removeSection");
+    $(".dashboard").removeClass("removeSection");
     
     })
 };
 
+soberApp.formReset = () => {
+  $("form").on("reset", function(event) {
+    // event.preventDefault prevents form submit button from refreshing page automatically
+
+    console.log("test");
+
+    $(".welcome").removeClass("removeSection");
+    $(".dashboard").addClass("removeSection");
+  });
+};
 
 
 soberApp.init = () => {
@@ -76,9 +88,9 @@ soberApp.init = () => {
     soberApp.insertQuote(); // brackets were missing?
     soberApp.clickKanye(); 
     soberApp.formSubmit(); 
+    soberApp.formReset();
 };
 
 $(document).ready(function() {
     soberApp.init();
-
 });
