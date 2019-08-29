@@ -510,3 +510,18 @@ img:hover {
   -ms-flex-pack: distribute;
       justify-content: space-around;
 }
+
+.trophy ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 5%;
+}
+
+.fa-trophy {
+  font-size: 5rem;
+  color: #27ec4d;
+  margin: 5px;
+}
