@@ -59,29 +59,58 @@ soberApp.clickKanye = function() {
 
 soberApp.formSubmit = () => {
     $("form").on("submit", function(event) {
-      // event.preventDefault prevents form submit button from refreshing page automatically
-      
-    event.preventDefault();
-
-    console.log('test');
     
+    // prevent default page refresh
+    event.preventDefault(); 
+    
+    //declare variables for user inputs
+    const username = $('input[name="username"]').val();
+    const habit = $('input[name="habit"]').val();
+    const spend = $('input[name="spend"]').val();
+
+    //move welcome form off page to show dashboard
     $(".welcome").addClass("removeSection");
     $(".dashboard").removeClass("removeSection");
-    
+
     })
 };
 
+soberApp.formSubmit = () => {
+    $("form").on("submit", function(event) {
+    
+    // prevent default page refresh
+    event.preventDefault(); 
+    
+    //declare variables for user inputs
+    // const username = $('input[name="username"]').val();
+    // const habit = $('input[name="habit"]').val();
+    // const spend = $('input[name="spend"]').val();
+
+    soberApp.retrieveInput();
+
+    //move welcome form off page to show dashboard
+    $(".welcome").addClass("removeSection");
+    $(".dashboard").removeClass("removeSection");
+
+    })
+};
+
+soberApp.retrieveInput = () => {
+    const username = $('input[name="username"]').val();
+    const habit = $('input[name="habit"]').val();
+    const spend = $('input[name="spend"]').val();
+
+    console.log(username);
+}
+
+//reset button refreshes page
 soberApp.formReset = () => {
   $("form").on("reset", function(event) {
-    // event.preventDefault prevents form submit button from refreshing page automatically
-
-    console.log("test");
 
     $(".welcome").removeClass("removeSection");
     $(".dashboard").addClass("removeSection");
   });
 };
-
 
 soberApp.init = () => {
     soberApp.getQuotes();

@@ -19,14 +19,35 @@ class Stopwatch {
       formattedTime = timeFormatter(time);
       watchElement.textContent = formattedTime;
 
-    //   console.log(formattedTime);
+      let counter;
+      //add trophy to trophyList
 
-    //   if (watchElement.textContent.slice(-1) === '5') {
-    //       console.log('Success');
-    //       soberApp.getQuotes();
-    //   }
+      // $("form").on("submit", function(event) {
+    
+      //   // prevent default page refresh
+      //   event.preventDefault(); 
+        
+      //   //declare variables for user inputs
+      //   const username = $('input[name="username"]').val();
+      //   const habit = $('input[name="habit"]').val();
+      //   const spend = $('input[name="spend"]').val();
+
+      // }
+
+      if (watchElement.textContent.slice(-1) === '5') {
+        counter++;
+
+        soberApp.getQuotes();
+
+        if (counter < 9) {
+          $(".trophyList").append(`<li><i class="fas fa-trophy"></i></li>`)
+        }
+      
+      }
 
     };
+
+    console.log(username); 
 
     // take the time now from the javascript time function
     // time passed is equal to the
