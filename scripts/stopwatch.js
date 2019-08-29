@@ -4,10 +4,17 @@ class Stopwatch {
     let interval;
     let offset;
 
-    this.isOn = false;
+    this.isOn = false; //timer is off
 
-    const update = () => {
-      // this needs to refer to watch object, so we use an arrow function
+    this.start = function() {
+      if (!this.isOn) {
+        interval = setInterval(update.bind(this), 1000); // updates timer every second
+        offset = Date.now();
+        this.isOn = true;
+      }
+    };
+
+    const update = () => { // arrow function helps "this" within refers to "update"
 
       // if the stopwatch is on, time is equal to time + delta
       if (this.isOn) {
@@ -19,33 +26,26 @@ class Stopwatch {
       formattedTime = timeFormatter(time);
       watchElement.textContent = formattedTime;
 
-      // add trophy to trophyList, but set a max
-
-      // add money saved to .money
-
-      // let newSpend = soberApp.retrieveSpend();
-      // console.log(newSpend);
-
       const updateTime = 1;
+      console.log(time); 
 
-      if (
-        watchElement.textContent.slice(-2) % updateTime === 0 &&
-        watchElement.textContent.slice(-2)
-      < updateTime*10) {
+      // add trophy to trophyList (max 9 trophies appear)
+      if (watchElement.textContent.slice(-2) % updateTime === 0 && 
+      time < updateTime*10*1000) { // 10 for 9 trophies* 1000 miliseconds
+      // watchElement.textContent.slice(-2) < updateTime*10) {
         $(".trophyList").append(`<li><i class="fas fa-trophy"></i></li>`);
       }
 
       if (watchElement.textContent.slice(-2) % updateTime === 0) {
-
+        //refreshes quote on timed interval
         soberApp.getQuotes();
 
+        // adds money on timed interval
         $(".money").html(
-          `<p>${(watchElement.textContent.slice(-2) / updateTime) *
+          `<p>$${(watchElement.textContent.slice(-2) / updateTime) *
             soberApp.retrieveSpend()}</p>`
         );
       }
-
-
     };
 
     // take the time now from the javascript time function
@@ -57,6 +57,7 @@ class Stopwatch {
       return timePassed;
     }
 
+    //converts miliseconds into hours, minutes seconds
     function timeFormatter(timeInMilliseconds) {
       let time = new Date(timeInMilliseconds);
 
@@ -78,14 +79,6 @@ class Stopwatch {
 
       return hours + " : " + minutes + " : " + seconds;
     }
-
-    this.start = function() {
-      if (!this.isOn) {
-        interval = setInterval(update.bind(this), 1000); // updates every second
-        offset = Date.now();
-        this.isOn = true;
-      }
-    };
 
     this.stop = function() {
       if (this.isOn) {
