@@ -3,7 +3,7 @@ class Stopwatch {
     let time = 0;
     let interval;
     let offset;
-    
+
     this.isOn = false;
 
     const update = () => {
@@ -19,19 +19,22 @@ class Stopwatch {
       formattedTime = timeFormatter(time);
       watchElement.textContent = formattedTime;
 
-    //   console.log(formattedTime);
+      let counter;
+      //add trophy to trophyList
 
-      if (watchElement.textContent.slice(-1) === '5') {
-          console.log('Success');
-          soberApp.getQuotes();
+      if (watchElement.textContent.slice(-1) === "5") {
+
+        console.log("test");
+
+        soberApp.getQuotes();
+
+        if (counter < 9) {
+          $(".trophyList").append(`<li><i class="fas fa-trophy"></i></li>`);
+        }
       }
-
-      // if (watchElement.textContent.slice(-1) === '5') {
-      //   counter += userInput;
-      //   select the box with the money, html"with counter variable"
-      // }
-
     };
+
+    console.log(username);
 
     // take the time now from the javascript time function
     // time passed is equal to the
@@ -81,7 +84,6 @@ class Stopwatch {
     };
 
     this.reset = function() {
-
       this.stop();
       time = 0;
       update(time);

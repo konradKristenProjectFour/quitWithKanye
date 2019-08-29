@@ -193,7 +193,17 @@ img:hover {
     justify-content: space-around;
 }
 
+.trophy ul {
+  display: flex; 
+  flex-wrap: wrap; 
+  // justify-content: space-around; 
+  // align-content: space-between; 
+  padding: 5%; 
+}
 
-
-
+.fa-trophy {
+  font-size: 5rem; 
+  color: $accent; 
+  margin: 5px; 
+}
 
