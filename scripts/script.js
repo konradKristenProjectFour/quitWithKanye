@@ -5,7 +5,110 @@ let toggleBtn = document.getElementById("toggle");
 let resetBtn = document.getElementById("reset");
 let watch = new Stopwatch(timer);
 
-// Link to api
+// soberApp.getVoice = function() {
+//   $.ajax({
+//     url: "http://proxy.hackeryou.com",
+//     dataType: "json",
+//     method: "GET",
+//     data: {
+//       async: true,
+//       crossDomain: true,
+//       reqUrl:
+//         "https://gateway-wdc.watsonplatform.net/text-to-speech/api/v1/synthesize",
+//       method: "POST",
+//         params: {
+//           voice: "en-US_MichaelV3Voice"
+//         },
+//       proxyHeaders: {
+//         "Content-Type": "application/json",
+//         Accept: "audio/wav",
+//         Authorization:
+//           "Basic YXBpa2V5Ok1jM3FkR19MREdSNjVIVlAwTllZaUg3OXEyVFh1Y0hNczhfN3BEVF9xaFBJ",
+//         "User-Agent": "PostmanRuntime/7.15.2",
+//         "Cache-Control": "no-cache",
+//         "Postman-Token":
+//           "ab11293a-7802-46d3-b31c-64ce93053420,f13fdedf-efe9-41f9-aca1-eb9b0ca0f849",
+//         Host: "gateway-wdc.watsonplatform.net",
+//         "Accept-Encoding": "gzip, deflate",
+//         "Content-Length": "22",
+//         Connection: "keep-alive",
+//         "cache-control": "no-cache"
+//       },
+//       xmlToJSON: false, // from notes
+//       useCache: false, // from notes
+//       processData: false,
+//       data: '{"text":"hello world"}'
+//     }
+//   })
+//     .then(function(res) {
+//       console.log(res);
+//     })
+//     .fail(error => {
+//       console.log(error);
+//     });
+// };
+
+// soberApp.getVoice = function() {
+//   $.ajax({
+//     async: true,
+//     crossDomain: true,
+//     url:
+//       "https://gateway-wdc.watsonplatform.net/text-to-speech/api/v1/synthesize?voice=en-US_MichaelV3Voice",
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//       Accept: "audio/wav",
+//       Authorization:
+//         "Basic YXBpa2V5Ok1jM3FkR19MREdSNjVIVlAwTllZaUg3OXEyVFh1Y0hNczhfN3BEVF9xaFBJ",
+//       "User-Agent": "PostmanRuntime/7.15.2",
+//       "Cache-Control": "no-cache",
+//       "Postman-Token":
+//         "ab11293a-7802-46d3-b31c-64ce93053420,f13fdedf-efe9-41f9-aca1-eb9b0ca0f849",
+//       Host: "gateway-wdc.watsonplatform.net",
+//       "Accept-Encoding": "gzip, deflate",
+//       "Content-Length": "22",
+//       Connection: "keep-alive",
+//       "cache-control": "no-cache"
+//     },
+//     processData: false,
+//     data: '{"text":"hello world"}'
+//   })
+//     .then(function(result) {
+//     //   Enter success function
+//     })
+//     .fail(error => {
+//     //   Enter error function
+//     });
+// };
+
+
+soberApp.getVoice = function() {
+  $.ajax({
+    url:
+      "https://gateway-wdc.watsonplatform.net/text-to-speech/api/v1/synthesize",
+    method: "GET",
+    datatype: "json",
+    data: {
+      accept: "audio%2Fwav",
+      text: "hola%20mundo",
+      voice: "es-ES_EnriqueVoice"
+    },
+    headers: {
+      Authorization:
+        "Basic YXBpa2V5Ok1jM3FkR19MREdSNjVIVlAwTllZaUg3OXEyVFh1Y0hNczhfN3BEVF9xaFBJ",
+      "cache-control": "no-cache",
+      "Postman-Token": "1fe32a98-d5fe-4906-8593-e809084c1cd3"
+    }
+  })
+    .then(function(result) {
+      // feed result into insertQuote if it excludes fuck
+      console.log(result);
+    })
+    .fail(error => {
+      console.log(error);
+    });
+};
+
 soberApp.baseUrl = `https://api.kanye.rest?format=text`;
 
 // Retrieve data from api
@@ -105,6 +208,7 @@ soberApp.formReset = () => {
 
 soberApp.init = () => {
   soberApp.getQuotes();
+  soberApp.getVoice();
   soberApp.insertQuote();
   soberApp.clickKanye();
   soberApp.formSubmit();
