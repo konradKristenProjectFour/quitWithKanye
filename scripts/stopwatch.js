@@ -14,7 +14,8 @@ class Stopwatch {
       }
     };
 
-    const update = () => { // arrow function helps "this" within refers to "update"
+    const update = () => {
+      // arrow function helps "this" within refers to "update"
 
       // if the stopwatch is on, time is equal to time + delta
       if (this.isOn) {
@@ -26,13 +27,16 @@ class Stopwatch {
       formattedTime = timeFormatter(time);
       watchElement.textContent = formattedTime;
 
-      const updateTime = 1;
-      console.log(time); 
+      const updateTime = 10;
+      // console.log(time);
 
       // add trophy to trophyList (max 9 trophies appear)
-      if (watchElement.textContent.slice(-2) % updateTime === 0 && 
-      time < updateTime*10*1000) { // 10 for 9 trophies* 1000 miliseconds
-      // watchElement.textContent.slice(-2) < updateTime*10) {
+      if (
+        watchElement.textContent.slice(-2) % updateTime === 0 &&
+        time < updateTime * 10 * 1000
+      ) {
+        // 10 for 9 trophies* 1000 miliseconds
+        // watchElement.textContent.slice(-2) < updateTime*10) {
         $(".trophyList").append(`<li><i class="fas fa-trophy"></i></li>`);
       }
 
@@ -42,8 +46,7 @@ class Stopwatch {
 
         // adds money on timed interval
         $(".money").html(
-          `<p>$${(watchElement.textContent.slice(-2) / updateTime) *
-            soberApp.retrieveSpend()}</p>`
+          `<p>$${(watchElement.textContent.slice(-2) / updateTime) * soberApp.retrieveSpend()}</p>`
         );
       }
     };
@@ -59,9 +62,22 @@ class Stopwatch {
 
     //converts miliseconds into hours, minutes seconds
     function timeFormatter(timeInMilliseconds) {
+      
       let time = new Date(timeInMilliseconds);
 
-      let hours = (time.getHours() - 19).toString();
+      // console.log();
+
+      let hours;
+
+      if (time.getHours() >= 19 && time.getHours() <= 23) {
+        hours = (time.getHours() - 19).toString();
+      } else {
+        hours = (time.getHours() + 5).toString();
+      }
+
+      // let hours = (Math.floor(time / 3600000)).toString();
+      // If we want hours rolling indefinitely, or we need to add days.
+
       let minutes = time.getMinutes().toString();
       let seconds = time.getSeconds().toString();
 
