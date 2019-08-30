@@ -3,22 +3,28 @@ html {
 }
 
 body {
+background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  url("../images/background.png");
   margin: 0 auto;
   color: white;
   font-size: 2rem;
   position: relative; 
-}
 
-.welcome, 
-.dashboard {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-  url("../images/background.png"),
-  rgba(0, 0, 0, 0.5);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   height: 100vh;
+
+    // overflow: hidden;
+
+}
+
+.welcome, 
+.dashboard {
+  height: 100vh;
   padding: 5vh 0;
+// overflow: hidden;
+
 }
 
 .welcome {
@@ -27,7 +33,11 @@ body {
 
 .removeSection {
   position: absolute; 
-  top: -2000px; 
+  top: -3000px; 
+}
+
+.displayOverflow {
+    overflow: hidden;
 }
 
 .textBoxes {
@@ -59,7 +69,6 @@ input[type="submit"] {
     border: 2px solid white;
     color: $primary;
     // border-radius: 15px;
-
 }
 
 input[type="reset"] {
@@ -132,40 +141,11 @@ img {
   width: 100%; 
 
   transform: rotate(25deg);
-//   border-radius: 50%; 
-//   border: 2px solid $accent; 
 
-// -webkit-filter: drop-shadow(2px 2px 0 $accent)
-//                   drop-shadow(-2px -2px 0 $accent);
   filter: drop-shadow(2px 2px 0 $accent) 
           drop-shadow(2px -2px 0 $accent)
           drop-shadow(-2px -2px 0 $accent)
           drop-shadow(-2px 2px 0 $accent);
-}
-
-img:hover {
-  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
-  transform: translate3d(0, 0, 0) rotate(25deg);
-  backface-visibility: hidden;
-  perspective: 1000px;
-}
-
-@keyframes shake {
-  10%, 90% {
-    transform: rotate(25deg) translate3d(-1px, 0, 0);
-  }
-  
-  20%, 80% {
-    transform:  rotate(25deg) translate3d(2px, 0, 0);
-  }
-
-  30%, 50%, 70% {
-    transform:  rotate(25deg) translate3d(-4px, 0, 0);
-  }
-
-  40%, 60% {
-    transform:  rotate(25deg) translate3d(4px, 0, 0);
-  }
 }
 
 .lowerDash {
