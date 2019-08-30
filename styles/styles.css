@@ -222,11 +222,22 @@ textarea {
 }
 
 html {
-  font-family: "Nanum Pen Script", cursive;
+  font-family: "Open Sans", sans-serif;
+  background: black;
+  color: white;
+  text-align: center;
+}
+
+.wrapper {
+  width: 90%;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 h1,
 h2 {
+  font-family: "Nanum Pen Script", cursive;
+  font-size: 10rem;
   text-transform: uppercase;
   color: #27ec4d;
   margin-bottom: 5vh;
@@ -238,33 +249,29 @@ h2 span {
   display: block;
 }
 
-h1 {
-  font-size: 10rem;
-}
-
 h2 {
-  font-size: 20rem;
-}
-
-p, input[type="username"],
-input[type="text"], input[type="number"] {
-  line-height: 1.6;
-  font-family: "Open Sans", sans-serif;
-  font-weight: 300;
+  font-size: 10rem;
 }
 
 P {
   font-size: 1.8rem;
 }
 
+p,
+input[type="username"],
+input[type="text"],
+input[type="number"] {
+  line-height: 1.6;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+}
+
 input[type="submit"] {
   font-size: 2rem;
 }
 
-.wrapper {
-  width: 90%;
-  max-width: 1280px;
-  margin: 0 auto;
+#timer {
+  font-size: 20rem;
 }
 
 html {

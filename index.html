@@ -26,70 +26,70 @@
             <section class="welcome" id="welcome">
                 <div class="welcomeSub wrapper">
                     <h1>Want to quit<span> with Kanye?</span></h1>
-                    <p>Description about quitting / motivation. Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit.</p>
+                    <p>Everyone has a bad habit they want to kick — whether it’s too much alcohol, smoking or even sugar. Don’t beat yourself up about it. Decide to start and take it day by day. So what do you say, are you ready to quit with Kanye?</p>
                     <div class="textBoxes">
-                        <label class="visuallyHidden" for="username">Name?</label>
-                        <input class="placeholderText" type="username" name="username" id="username"
-                            placeholder="Your name">
-
+                        <!-- username start-->
+                        <label class="visuallyHidden" for="username">Name</label>
+                        <input class="placeholderText" type="username" name="username" id="username" placeholder="Name">
+                        <!-- habit start-->
                         <label class="visuallyHidden" for="habit">What's your vice?</label>
-                        <input class="placeholderText" type="text" name="habit" id="habit"
-                            placeholder="Your vice">
-
-                        <label class="visuallyHidden" for="spend">What's your daily spend?</label>
-                        <input class="placeholderText" type="number" name="spend" id="spend" placeholder="Your daily spend" min="1" max="1000">
-                    </div>
-
-                    
+                        <input class="placeholderText" type="text" name="habit" id="habit" placeholder="Vice">
+                        <!-- spend start-->
+                        <label class="visuallyHidden" for="spend">Daily spend?</label>
+                        <input class="placeholderText" type="number" name="spend" id="spend" placeholder="Daily spend?" min="1" max="1000">
+                    </div><!-- /.textBoxes-->
+                    <div class="submitBox">
                         <label class="visuallyHidden" for="submit">Submit</label>
-                        <div class="submitBox">
-                            <input type="submit" id="toggle" value="Hell Ye" name="submit">
-                        </div>
-
-                </div><!-- /.wrapper-->
-            </section><!-- /.welcome -->
-
+                        <input type="submit" id="toggle" value="Hell Ye" name="submit">
+                    </div><!-- /.submitBox-->
+                </div><!-- /.welcomeSub wrapper -->
+            </section> <!-- /.welcome -->
+            
             <section class="dashboard removeSection" id="dashboard">
-                <div class="wrapper dashboardSub">
-                    <!-- <h2>Start Now</h2> -->
+                <div class="dashboardSub wrapper">
 
                     <div class="quotes">
-                        <div class="quoteContainer"></div>
+                        <div class="quoteContainer">
+                            <!-- DYNAMIC CONTENT -->
+                        </div><!-- /.quoteContainer -->
                         <div class="kanyeContainer">
                             <div class="kanyeButton" id="kanyeButton">
                                 <img class="kanyeImg" src="images/kanyeSmiling.png" alt="Picture of Kanye smiling.">
-                            </div>
-                        </div>
+                            </div><!-- /.kanyeButton -->
+                        </div><!-- /.kanyeContainer -->
                     </div><!-- /.quotes -->
 
                     <div class="clock">
                         <h2 id="timer">00 : 00 : 00 </h2>
+                        <h2>Time passed since you quit with Kanye</h2>
                     </div><!-- /.clock -->
 
                     <div class="lowerDash">
                         <div class="trophy">
+                            <h3>Achievements</h3>
                             <ul class="trophyList">
                             </ul>
                         </div><!-- /.trophyCase -->
                         <div class="money">
+                            <h3>Money Saved</h3>
                             <p>$0</p>
-                        </div>
+                        </div><!-- /.money -->
                         <div class="reset">
+                            <h3>Reset</h3>
                             <label class="visuallyHidden" for="reset">Reset</label>
                             <input type="reset" id="reset" value="You fall off?" name="reset">
-                        </div>
-                    </div>
-
-                </div><!-- /.wrapper-->
-
+                        </div><!-- /.reset -->
+                    </div><!-- /.lowerDash -->
+                </div><!-- /.dashboardSub wrapper-->
             </section><!-- /.dashboard -->
-        </form>
+        </form><!-- /.initialForm -->
+
     </main>
 
-    <footer>
+    <footer class="wrapper">
+        <p>Designed and developed by Konrad Droeske & Kristen Zemlak | 2019</p>
+    </footer><!-- /.wrapper -->
 
-    </footer>
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 
