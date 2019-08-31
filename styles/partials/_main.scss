@@ -1,44 +1,81 @@
+// VARIABLES
+
+$primary: white;
+$secondary: rgba(0, 0, 0, 0);
+$accent: #27ec4d;
+$baseFont: 'Open Sans', sans-serif;
+$specialFont: "Nanum Pen Script", cursive;
+
+// GLOBAL STYLES
+
 html {
-  font-size: 10px;
+    font-family: $baseFont;
+    font-size: 10px;
+    background: black; 
+    color: $primary; 
+    text-align: center; 
 }
 
 body {
-background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-  url("../images/background.png");
-  margin: 0 auto;
-  color: white;
-  font-size: 2rem;
-  position: relative; 
-
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  height: 100vh;
-
-    // overflow: hidden;
-
-}
-
-.welcome, 
-.dashboard {
-  height: 100vh;
-  padding: 5vh 0;
-// overflow: hidden;
-
-}
-
-.welcome {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/background.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: 0 auto;
+    color: $primary;
+    font-size: 2rem;
     text-align: center;
+    position: relative;
 }
 
-.removeSection {
-  position: absolute; 
-  top: -3000px; 
+.wrapper {
+    width: 90%;
+    max-width: 1280px;
+    margin: 0 auto;
 }
 
-.displayOverflow {
-    overflow: hidden;
+h1,
+h2, 
+h3 {
+    font-family: $specialFont;
+    font-size: 10rem;
+    text-transform: uppercase;
+    color: $accent;
+    margin-bottom: 5vh;
+    text-align: center;
+    span {
+        display: block;
+    }
 }
+
+h3 {
+    margin: 2vh; 
+    font-size: 4rem;
+}
+
+P {
+    font-size: 1.8rem;
+}
+
+p, 
+input[type="username"],
+input[type="text"], 
+input[type="number"] {
+  line-height: 1.6;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+}
+
+input[type="submit"] {
+  font-size: 2rem;
+}
+
+#timer {
+  font-size: 20rem; 
+}
+
+
+// INITIAL FORM /////////////////
 
 .textBoxes {
     display: flex;
@@ -46,63 +83,86 @@ background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     align-items: center;
 }
 
-input[type="username"], input[type="text"], input[type="number"] {
-    color: white;
-    background: rgba(0, 0, 0, 0);
+input[type="username"], 
+input[type="text"], 
+input[type="number"] {
+    background: $secondary;
+    color: $primary;
+    font-style: italic; 
+    text-align: center;
     border: none;
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid $primary;
     padding: 5px 0;
     width: 35%;
     min-width: 300px;
     margin-top: 5vh;
-    text-align: center;
-}
-
-input[type="username"], input[type="text"], input[type="number"] {
-    &:hover {
+    &:hover, 
+    &:focus {
         border-bottom: 2px solid $accent;
     }
 }
 
-input[type="submit"] {
-    margin-top: 10vh;
-    border: 2px solid white;
-    color: $primary;
-    // border-radius: 15px;
-}
-
-input[type="reset"] {
-    border: none;
-    color: $accent;
-}
-
-input[type="submit"], input[type="reset"] {
-    
-    background: $secondary;
-    padding: 10px 7%;
-    
+input[type="submit"], 
+input[type="reset"], 
+.trophy, 
+.money, 
+.reset  {
+    font-family: $specialFont;
     text-transform: uppercase;
-    
+    border-radius: 15px;
+    width: 32%;
 }
 
-input[type="submit"]:hover {
+input[type="submit"], 
+input[type="reset"] {
+    background-color: $accent;
+    color: black;
+}
+
+input[type="submit"] {
     border: 2px solid $accent;
-    color: $accent;
+    color: black;
+    font-size: 5rem; 
+    margin: 10vh;
+    padding: 10px 7%;
+    &:hover, 
+    &:focus {
+        border-bottom: 2px solid $accent;
+    }
 }
 
 .placeholderText::placeholder {
     opacity: 0.7;
-    text-align: center;
 }
 
-.clock {
-  border: none; 
-  margin: 0;
-  
-  h2 {
-    margin-bottom: 0;
-  }
+// WELCOME SECTION  /////////////////
+
+.welcome, 
+.dashboard {
+    height: 100vh;
+    padding: 2% 0;
 }
+
+.removeSection {
+    position: absolute; 
+    top: -3000px; 
+}
+
+.displayOverflow {
+    overflow: hidden;
+}
+
+.introQuote {
+    margin: 2vh; 
+    blockquote, 
+    cite {
+    font-family: $specialFont; 
+    font-size: 3rem;
+    color: $accent; 
+    }
+}
+
+// DASHBOARD SECTION /////////////////
 
 .dashboardSub {
     height: 100%;
@@ -111,79 +171,74 @@ input[type="submit"]:hover {
     justify-content: space-between;
 }
 
+// QUOTES SECTION /////////////////
+
 .quotes {
     display: flex;
     justify-content: flex-end;
 }
 
-.kanyeContainer {
-    flex: 1 0 120px;
-}
-
-.kanyeButton {
-//   border-radius: 100%; 
-//   background: $accent; 
-  width: 120px;
-}
-
 .quoteContainer {
     padding-right: 15px;
     flex: 1 0 calc(100% - 120px);
-    text-align: right;
-
+    text-align: right; 
     p {
         padding: 4% 4% 0 0;
+        font-family: $specialFont; 
+        font-size: 3rem;
+        line-height: 3rem; 
+        color: $accent; 
     }
 }
 
-img {
-  display: block; 
-  width: 100%; 
-
-  transform: rotate(25deg);
-
-  filter: drop-shadow(2px 2px 0 $accent) 
-          drop-shadow(2px -2px 0 $accent)
-          drop-shadow(-2px -2px 0 $accent)
-          drop-shadow(-2px 2px 0 $accent);
+.kanyeContainer {
+    flex: 1 0 120px;
+    .kanyeButton {
+        width: 120px;
+    }
+    img {
+        display: block; 
+        width: 100%; 
+        transform: rotate(25deg);
+        filter: drop-shadow(2px 2px 0 $accent) 
+            drop-shadow(2px -2px 0 $accent)
+            drop-shadow(-2px -2px 0 $accent)
+            drop-shadow(-2px 2px 0 $accent);
+    }
 }
+
+// BELOW CLOCK /////////////////
 
 .lowerDash {
     display: flex;
     justify-content: space-between;
 }
 
-.trophy, .money, .reset {
-    width: 32%;
+.trophy, 
+.money, 
+.reset {
+    color: $accent;
     border: 2px solid $accent;
-    border-radius: 15px;
-}
-
-.money {
+    h3 {
+        font-size: 4rem; 
+    }
+    h4 {
+        font-size: 6rem; 
+        margin: 2vh 0;
+    }
     p {
-        color: $accent;
-        font-size: 6rem;
-        margin: 3vh 0;
-        text-align: center;
+        font-size: 2rem;  
     }
 }
 
-.reset {
-    display: flex;
-    justify-content: space-around;
-}
-
 .trophy ul {
-  display: flex; 
-  flex-wrap: wrap; 
-  // justify-content: space-around; 
-  // align-content: space-between; 
-  padding: 5%; 
+    display: flex; 
+    flex-wrap: wrap; 
+    padding: 5%; 
 }
 
 .fa-trophy {
-  font-size: 5rem; 
-  color: $accent; 
-  margin: 5px; 
+    font-size: 5rem; 
+    color: $accent; 
+    margin: 5px; 
 }
-
