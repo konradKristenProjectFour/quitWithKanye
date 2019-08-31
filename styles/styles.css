@@ -227,6 +227,29 @@ html {
   background: black;
   color: white;
   text-align: center;
+  font-size: 10px;
+}
+
+body {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("../images/background.png");
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/background.png");
+  margin: 0 auto;
+  color: white;
+  font-size: 2rem;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+
+h1, .welcomeSub {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 body {
@@ -252,22 +275,28 @@ h1,
 h2,
 h3 {
   font-family: "Nanum Pen Script", cursive;
-  font-size: 10rem;
+  font-size: 7rem;
   text-transform: uppercase;
   color: #27ec4d;
   margin-bottom: 5vh;
   text-align: center;
 }
 
-h1 span,
-h2 span,
-h3 span {
+h1 .lineTwo, h1 .lineThree,
+h2 .lineTwo,
+h2 .lineThree {
+
   display: block;
 }
 
 h3 {
   margin: 2vh;
   font-size: 4rem;
+}
+
+h3 {
+  color: #27ec4d;
+  margin: 15px 0;
 }
 
 P {
@@ -284,11 +313,73 @@ input[type="number"] {
 }
 
 input[type="submit"] {
-  font-size: 2rem;
+  font-size: 4.5rem;
 }
 
 #timer {
   font-size: 20rem;
+}
+
+.removeSection {
+  position: absolute;
+  top: -3000px;
+}
+
+.displayOverflow {
+  overflow: hidden;
+}
+
+header,
+.welcome,
+.dashboard {
+  height: 100vh;
+  padding: 5vh 0;
+}
+
+.yes:hover, .no:hover {
+  cursor: pointer;
+  color: white;
+}
+
+.welcome {
+  text-align: center;
+}
+
+.welcome p {
+  margin-bottom: 10vh;
+}
+
+fieldset {
+  width: 100%;
+  max-width: 900px;
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.radioBox {
+  width: 25%;
+}
+
+.fas {
+  font-size: 5rem;
+}
+
+[type="radio"] {
+  opacity: 0;
+  position: absolute;
+}
+
+[type="radio"]:checked + .toggleLabel {
+  color: #27ec4d;
+}
+
+i:hover {
+  -webkit-animation: heartBeat 1.5s;
+  animation: heartBeat 1.5s;
 }
 
 .textBoxes {
@@ -307,6 +398,8 @@ input[type="submit"] {
 input[type="username"],
 input[type="text"],
 input[type="number"] {
+
+  color: white;
   background: rgba(0, 0, 0, 0);
   color: white;
   font-style: italic;
@@ -316,26 +409,30 @@ input[type="number"] {
   padding: 5px 0;
   width: 35%;
   min-width: 300px;
-  margin-top: 5vh;
+  margin-top: 10vh;
+  text-align: center;
 }
 
-input[type="username"]:hover, input[type="username"]:focus,
-input[type="text"]:hover,
-input[type="text"]:focus,
-input[type="number"]:hover,
-input[type="number"]:focus {
+input[type="username"]:hover,
+input[type="text"]:hover {
   border-bottom: 2px solid #27ec4d;
 }
 
-input[type="submit"],
-input[type="reset"],
-.trophy,
-.money,
-.reset {
+input[type="number"]:hover, input[type="number"]:focus {
+  border-bottom: 2px solid #27ec4d;
+}
+
+.submitBox {
+  position: relative;
+}
+
+input[type="submit"] {
+  margin-top: 10vh;
+  border: none;
+  border: 2px solid #27ec4d;
   font-family: "Nanum Pen Script", cursive;
-  text-transform: uppercase;
+  color: #27ec4d;
   border-radius: 15px;
-  width: 32%;
 }
 
 input[type="submit"],
@@ -344,16 +441,17 @@ input[type="reset"] {
   color: black;
 }
 
-input[type="submit"] {
-  border: 2px solid #27ec4d;
-  color: black;
-  font-size: 5rem;
-  margin: 10vh;
-  padding: 10px 7%;
+input[type="submit"],
+input[type="reset"] {
+  background: rgba(0, 0, 0, 0);
+  padding: 12px 20px 8px 20px;
+  text-transform: uppercase;
 }
 
-input[type="submit"]:hover, input[type="submit"]:focus {
-  border-bottom: 2px solid #27ec4d;
+input[type="submit"]:hover {
+  color: white;
+  border: 2px solid white;
+
 }
 
 .placeholderText::-webkit-input-placeholder {
@@ -372,30 +470,30 @@ input[type="submit"]:hover, input[type="submit"]:focus {
   opacity: 0.7;
 }
 
-.welcome,
-.dashboard {
-  height: 100vh;
-  padding: 2% 0;
-}
-
-.removeSection {
-  position: absolute;
-  top: -3000px;
-}
-
-.displayOverflow {
-  overflow: hidden;
-}
-
-.introQuote {
-  margin: 2vh;
-}
-
-.introQuote blockquote,
-.introQuote cite {
-  font-family: "Nanum Pen Script", cursive;
-  font-size: 3rem;
+.placeholderText::-webkit-input-placeholder:hover, .placeholderText::-webkit-input-placeholder:focus {
   color: #27ec4d;
+}
+
+.placeholderText:-ms-input-placeholder:hover, .placeholderText:-ms-input-placeholder:focus {
+  color: #27ec4d;
+}
+
+.placeholderText::-ms-input-placeholder:hover, .placeholderText::-ms-input-placeholder:focus {
+  color: #27ec4d;
+}
+
+.placeholderText::placeholder:hover, .placeholderText::placeholder:focus {
+  color: #27ec4d;
+}
+
+.clock {
+  border: none;
+  margin: 0;
+}
+
+.clock h2 {
+  font-size: 4rem;
+  margin-bottom: 0;
 }
 
 .dashboardSub {
@@ -468,7 +566,7 @@ input[type="submit"]:hover, input[type="submit"]:focus {
 .trophy,
 .money,
 .reset {
-  color: #27ec4d;
+  width: 32%;
   border: 2px solid #27ec4d;
 }
 
@@ -485,10 +583,14 @@ input[type="submit"]:hover, input[type="submit"]:focus {
   margin: 2vh 0;
 }
 
-.trophy p,
-.money p,
-.reset p {
-  font-size: 2rem;
+.lowerReset {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .trophy ul {

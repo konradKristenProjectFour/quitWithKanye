@@ -45,7 +45,7 @@ class Stopwatch {
         soberApp.getQuotes();
 
         // adds money on timed interval
-        $(".money").html(
+        $(".lowerMoney").html(
           `<p>$${(watchElement.textContent.slice(-2) / updateTime) * soberApp.retrieveSpend()}</p>`
         );
       }
