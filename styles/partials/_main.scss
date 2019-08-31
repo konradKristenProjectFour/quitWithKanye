@@ -1,189 +1,228 @@
-html {
-  font-size: 10px;
-}
-
-body {
-background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-  url("../images/background.png");
-  margin: 0 auto;
-  color: white;
-  font-size: 2rem;
-  position: relative; 
-
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  height: 100vh;
-
-    // overflow: hidden;
-
-}
-
-.welcome, 
-.dashboard {
-  height: 100vh;
-  padding: 5vh 0;
-// overflow: hidden;
-
-}
-
-.welcome {
-    text-align: center;
-}
+// GENERAL
 
 .removeSection {
-  position: absolute; 
-  top: -3000px; 
+  position: absolute;
+  top: -3000px;
 }
 
 .displayOverflow {
-    overflow: hidden;
+  overflow: hidden;
+}
+
+header,
+.welcome,
+.dashboard {
+  height: 100vh;
+  padding: 5vh 0;
+  // overflow: hidden;
+}
+
+// WELCOME
+
+.welcome {
+  text-align: center;
+  p {
+    margin-bottom: 10vh;
+  }
+}
+
+fieldset {
+  width: 100%;
+  max-width: 900px;
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.radioBox {
+  width: 25%;
+  // border: 1px solid red;
+}
+
+.fas {
+  font-size: 5rem;
+}
+
+[type="radio"] {
+  opacity: 0;
+  position: absolute;
+}
+
+[type="radio"]:checked + .toggleLabel {
+  color: $accent;
+}
+
+i:hover {
+  -webkit-animation: heartBeat 1.5s;
+  animation: heartBeat 1.5s;
 }
 
 .textBoxes {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-input[type="username"], input[type="text"], input[type="number"] {
-    color: white;
-    background: rgba(0, 0, 0, 0);
-    border: none;
-    border-bottom: 2px solid white;
-    padding: 5px 0;
-    width: 35%;
-    min-width: 300px;
-    margin-top: 5vh;
-    text-align: center;
+input[type="username"],
+input[type="text"],
+input[type="number"] {
+  color: white;
+  background: rgba(0, 0, 0, 0);
+  border: none;
+  border-bottom: 2px solid white;
+  padding: 5px 0;
+  width: 35%;
+  min-width: 300px;
+  margin-top: 10vh;
+  text-align: center;
 }
 
-input[type="username"], input[type="text"], input[type="number"] {
-    &:hover {
-        border-bottom: 2px solid $accent;
-    }
+input[type="username"],
+input[type="text"] {
+  &:hover {
+    border-bottom: 2px solid $accent;
+  }
+}
+
+input[type="number"] {
+  &:hover,
+  &:focus {
+    // color: $accent;
+    border-bottom: 2px solid $accent;
+  }
+}
+
+.submitBox {
+  position: relative;
 }
 
 input[type="submit"] {
-    margin-top: 10vh;
-    border: 2px solid white;
-    color: $primary;
-    // border-radius: 15px;
+  margin-top: 10vh;
+  border: none;
+  // border-bottom: 2px solid $accent;
+  font-family: $specialFont;
+  color: $accent;
+  // border-radius: 15px;
 }
 
 input[type="reset"] {
-    border: none;
-    color: $accent;
+  border: none;
+  color: $accent;
 }
 
-input[type="submit"], input[type="reset"] {
-    
-    background: $secondary;
-    padding: 10px 7%;
-    
-    text-transform: uppercase;
-    
+input[type="submit"],
+input[type="reset"] {
+  background: $secondary;
+  padding: 10px 7%;
+
+  text-transform: uppercase;
 }
 
 input[type="submit"]:hover {
-    border: 2px solid $accent;
-    color: $accent;
+  border-bottom: 2px solid $primary;
+  color: $primary;
 }
 
 .placeholderText::placeholder {
-    opacity: 0.7;
-    text-align: center;
+  opacity: 0.7;
+  text-align: center;
+
+  &:hover,
+  &:focus {
+    color: $accent;
+  }
 }
 
 .clock {
-  border: none; 
+  border: none;
   margin: 0;
-  
+
   h2 {
+    font-size: 4rem;
     margin-bottom: 0;
   }
 }
 
 .dashboardSub {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .quotes {
-    display: flex;
-    justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .kanyeContainer {
-    flex: 1 0 120px;
+  flex: 1 0 120px;
 }
 
 .kanyeButton {
-//   border-radius: 100%; 
-//   background: $accent; 
+  //   border-radius: 100%;
+  //   background: $accent;
   width: 120px;
 }
 
 .quoteContainer {
-    padding-right: 15px;
-    flex: 1 0 calc(100% - 120px);
-    text-align: right;
+  padding-right: 15px;
+  flex: 1 0 calc(100% - 120px);
+  text-align: right;
 
-    p {
-        padding: 4% 4% 0 0;
-    }
+  p {
+    padding: 4% 4% 0 0;
+  }
 }
 
 img {
-  display: block; 
-  width: 100%; 
+  display: block;
+  width: 100%;
 
   transform: rotate(25deg);
 
-  filter: drop-shadow(2px 2px 0 $accent) 
-          drop-shadow(2px -2px 0 $accent)
-          drop-shadow(-2px -2px 0 $accent)
-          drop-shadow(-2px 2px 0 $accent);
+  filter: drop-shadow(2px 2px 0 $accent) drop-shadow(2px -2px 0 $accent)
+    drop-shadow(-2px -2px 0 $accent) drop-shadow(-2px 2px 0 $accent);
 }
 
 .lowerDash {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
-.trophy, .money, .reset {
-    width: 32%;
-    border: 2px solid $accent;
-    border-radius: 15px;
+.trophy,
+.money,
+.reset {
+  width: 32%;
+  border: 2px solid $accent;
+  border-radius: 15px;
 }
 
 .money {
-    p {
-        color: $accent;
-        font-size: 6rem;
-        margin: 3vh 0;
-        text-align: center;
-    }
+  p {
+    color: $accent;
+    font-size: 6rem;
+    margin: 3vh 0;
+    text-align: center;
+  }
 }
 
-.reset {
-    display: flex;
-    justify-content: space-around;
+.lowerReset {
+  display: flex;
+  flex-direction: column;
 }
 
 .trophy ul {
-  display: flex; 
-  flex-wrap: wrap; 
-  // justify-content: space-around; 
-  // align-content: space-between; 
-  padding: 5%; 
+  display: flex;
+  flex-wrap: wrap;
+  // justify-content: space-around;
+  // align-content: space-between;
+  padding: 5%;
 }
 
 .fa-trophy {
-  font-size: 5rem; 
-  color: $accent; 
-  margin: 5px; 
+  font-size: 5rem;
+  color: $accent;
+  margin: 5px;
 }
-
