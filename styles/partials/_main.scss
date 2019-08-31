@@ -9,6 +9,7 @@ $specialFont: "Nanum Pen Script", cursive;
 // GLOBAL STYLES
 
 html {
+    
   font-family: $baseFont;
   background: black; 
   color: white; 
@@ -154,7 +155,11 @@ fieldset {
 i:hover {
   -webkit-animation: heartBeat 1.5s;
   animation: heartBeat 1.5s;
+
 }
+
+
+// INITIAL FORM /////////////////
 
 .textBoxes {
   display: flex;
@@ -204,7 +209,9 @@ input[type="submit"] {
   border-radius: 15px;
 }
 
+input[type="submit"], 
 input[type="reset"] {
+
   border: none;
   color: $accent;
 }
@@ -240,7 +247,24 @@ input[type="submit"]:hover {
     font-size: 4rem;
     margin-bottom: 0;
   }
+
 }
+
+.displayOverflow {
+    overflow: hidden;
+}
+
+.introQuote {
+    margin: 2vh; 
+    blockquote, 
+    cite {
+    font-family: $specialFont; 
+    font-size: 3rem;
+    color: $accent; 
+    }
+}
+
+// DASHBOARD SECTION /////////////////
 
 .dashboardSub {
   height: 100%;
@@ -248,6 +272,8 @@ input[type="submit"]:hover {
   flex-direction: column;
   justify-content: space-between;
 }
+
+// QUOTES SECTION /////////////////
 
 .quotes {
   display: flex;
@@ -282,7 +308,10 @@ img {
 
   filter: drop-shadow(2px 2px 0 $accent) drop-shadow(2px -2px 0 $accent)
     drop-shadow(-2px -2px 0 $accent) drop-shadow(-2px 2px 0 $accent);
+
 }
+
+// BELOW CLOCK /////////////////
 
 .lowerDash {
   display: flex;
