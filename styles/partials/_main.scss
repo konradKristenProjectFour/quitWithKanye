@@ -1,94 +1,3 @@
-// VARIABLES
-
-$primary: white;
-$secondary: rgba(0, 0, 0, 0);
-$accent: #27ec4d;
-$baseFont: 'Open Sans', sans-serif;
-$specialFont: "Nanum Pen Script", cursive;
-
-// GLOBAL STYLES
-
-html {
-  font-family: $baseFont;
-  background: black; 
-  color: white; 
-  text-align: center; 
-  font-size: 10px;
-}
-
-body {
-background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-  url("../images/background.png");
-  margin: 0 auto;
-  color: white;
-  font-size: 2rem;
-  position: relative; 
-
-  // make each page consistent
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  height: 100vh;
-}
-
-// added this to vertically center the the header and the welcome page
-h1, .welcomeSub {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.wrapper {
-  width: 90%;
-  max-width: 1280px;
-  margin: 0 auto;
-}
-
-h1,
-h2 {
-  font-family: $specialFont;
-  font-size: 7rem;
-  text-transform: uppercase;
-  color: $accent;
-  margin-bottom: 5vh;
-  text-align: center;
-  .lineTwo, .lineThree {
-    display: block;
-  }
-}
-
-h2 {
-  font-size: 10rem;
-}
-
-h3 {
-  color: $accent;
-  margin: 15px 0;
-}
-
-P {
-  font-size: 1.8rem;
-}
-
-p, 
-input[type="username"],
-input[type="text"], 
-input[type="number"] {
-  line-height: 1.6;
-  font-family: "Open Sans", sans-serif;
-  font-weight: 300;
-}
-
-input[type="submit"] {
-  font-size: 4.5rem;
-}
-
-#timer {
-  font-size: 20rem; 
-}
-
 // GENERAL
 
 .removeSection {
@@ -106,13 +15,6 @@ header,
   height: 100vh;
   padding: 5vh 0;
   // overflow: hidden;
-}
-
-// HEADER
-
-.yes:hover, .no:hover {
-    cursor: pointer;
-    color: white;
 }
 
 // WELCOME

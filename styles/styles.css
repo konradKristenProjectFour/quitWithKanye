@@ -303,6 +303,11 @@ input[type="submit"] {
   font-size: 20rem;
 }
 
+.yes:hover, .no:hover {
+  cursor: pointer;
+  color: white;
+}
+
 .removeSection {
   position: absolute;
   top: -3000px;
@@ -317,11 +322,6 @@ header,
 .dashboard {
   height: 100vh;
   padding: 5vh 0;
-}
-
-.yes:hover, .no:hover {
-  cursor: pointer;
-  color: white;
 }
 
 .welcome {
