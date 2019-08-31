@@ -46,7 +46,8 @@ class Stopwatch {
 
         // adds money on timed interval
         $(".lowerMoney").html(
-          `<p>$${(watchElement.textContent.slice(-2) / updateTime) * soberApp.retrieveSpend()}</p>`
+          `<p>$${(watchElement.textContent.slice(-2) / updateTime) *
+            soberApp.retrieveSpend()}</p>`
         );
       }
     };
@@ -62,14 +63,13 @@ class Stopwatch {
 
     //converts miliseconds into hours, minutes seconds
     function timeFormatter(timeInMilliseconds) {
-      
       let time = new Date(timeInMilliseconds);
 
       // console.log();
 
       let hours;
 
-      // 
+      //
       if (time.getHours() >= 19 && time.getHours() <= 23) {
         hours = (time.getHours() - 19).toString();
       } else {

@@ -3876,3 +3876,101 @@ img {
     animation-iteration-count: 1 !important;
   }
 }
+
+@media screen and (max-width: 400px) {
+  body {
+    font-size: 1.8rem;
+  }
+  h1,
+  h2,
+  h3 {
+    font-size: 6rem;
+  }
+  h1 span,
+  h2 span,
+  h3 span {
+    display: inline;
+  }
+  h2,
+  h3 {
+    margin: 2vh;
+    font-size: 3rem;
+  }
+  #timer {
+    font-size: 7rem;
+  }
+  input[type="submit"],
+  input[type="reset"],
+  .trophy,
+  .money,
+  .reset {
+    width: 100%;
+  }
+  input[type="submit"] {
+    font-size: 4rem;
+    margin: 10vh 0;
+  }
+  .placeholderText::-webkit-input-placeholder {
+    opacity: 0.7;
+  }
+  .placeholderText:-ms-input-placeholder {
+    opacity: 0.7;
+  }
+  .placeholderText::-ms-input-placeholder {
+    opacity: 0.7;
+  }
+  .placeholderText::placeholder {
+    opacity: 0.7;
+  }
+  .introQuote {
+    margin: 2vh;
+    font-size: 3rem;
+  }
+  .dashboardSub {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .quotes {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .quoteContainer p {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+  .lowerDash {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .trophy,
+  .money,
+  .reset {
+    margin: 2vh 0;
+  }
+  .trophy h3,
+  .trophy h4,
+  .trophy p,
+  .money h3,
+  .money h4,
+  .money p,
+  .reset h3,
+  .reset h4,
+  .reset p {
+    font-size: 2rem;
+  }
+}
