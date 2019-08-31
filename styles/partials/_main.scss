@@ -100,10 +100,10 @@ input[type="number"] {
 input[type="submit"] {
   margin-top: 10vh;
   border: none;
-  // border-bottom: 2px solid $accent;
+  border: 2px solid $accent;
   font-family: $specialFont;
   color: $accent;
-  // border-radius: 15px;
+  border-radius: 15px;
 }
 
 input[type="reset"] {
@@ -114,14 +114,14 @@ input[type="reset"] {
 input[type="submit"],
 input[type="reset"] {
   background: $secondary;
-  padding: 10px 7%;
+  padding: 12px 20px 8px 20px;
 
   text-transform: uppercase;
 }
 
 input[type="submit"]:hover {
-  border-bottom: 2px solid $primary;
   color: $primary;
+    border: 2px solid $primary;
 }
 
 .placeholderText::placeholder {
