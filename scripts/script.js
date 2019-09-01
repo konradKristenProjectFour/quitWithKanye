@@ -179,6 +179,7 @@ soberApp.formReset = () => {
 
     $("ul").html("");
     $(".numberBox").removeClass("badInput");
+    $("button.speedButton").removeClass("highSpeed");
 
     $(".dashboard").addClass("removeSection");
     $(".welcome").removeClass("removeSection");

@@ -634,8 +634,10 @@ input[type="reset"] span {
   display: block;
 }
 
-Button.speedButton:hover,
-input[type="reset"]:hover {
+Button.speedButton:hover, Button.speedButton:focus, Button.speedButton:active,
+input[type="reset"]:hover,
+input[type="reset"]:focus,
+input[type="reset"]:active {
   background-color: #27ec4d;
   color: black;
 }
