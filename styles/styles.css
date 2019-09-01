@@ -295,6 +295,15 @@ h4 {
   color: #27ec4d;
 }
 
+a {
+  color: #27ec4d;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #27ec4d;
+}
+
 p {
   font-size: 1.8rem;
 }
@@ -317,15 +326,22 @@ input[type="number"] {
 .lowerMoney p {
   text-align: center;
   line-height: 0.9;
-  font-size: 12rem;
+  font-size: 10rem;
   font-family: "Nanum Pen Script", cursive;
 }
 
-input[type="submit"] {
-  font-size: 4.5rem;
+.trophyList p {
+  font-size: 7rem;
+  font-family: "Nanum Pen Script", cursive;
+  color: #27ec4d;
+  line-height: 0.8;
 }
 
-.yes:hover, .no:hover {
+input[type="submit"] {
+  font-size: 5rem;
+}
+
+.yes:hover, .yes:focus, .yes:active, .no:hover, .no:focus, .no:active {
   cursor: pointer;
   color: white;
 }
@@ -458,7 +474,7 @@ input[type="submit"] {
   border-radius: 15px;
 }
 
-input[type="submit"]:hover {
+input[type="submit"]:hover, input[type="submit"]:focus, input[type="submit"]:active {
   color: white;
 }
 
@@ -601,7 +617,7 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 6% 8% 0 8%;
+  padding: 4% 8% 6% 8%;
 }
 
 .speedButton,

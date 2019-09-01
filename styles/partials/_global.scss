@@ -81,6 +81,14 @@ h4 {
   color: $accent;
 }
 
+a {
+  color: $accent;
+  text-decoration: none;
+  &:visited {
+    color: $accent;
+  }
+}
+
 p {
   font-size: 1.8rem;
 }
@@ -104,11 +112,21 @@ input[type="number"] {
   p {
     text-align: center;
     line-height: 0.9;
-    font-size: 12rem;
+    font-size: 10rem;
     font-family: "Nanum Pen Script", cursive;
   }
 }
 
+.trophyList {
+  p {
+    font-size: 7rem;
+    font-family: $specialFont;
+    color: $accent;
+    line-height: 0.8;
+  }
+}
+
 input[type="submit"] {
-  font-size: 4.5rem;
+  font-size: 5rem;
+  
 }

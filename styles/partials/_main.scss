@@ -127,11 +127,12 @@ input[type="submit"] {
   font-family: $specialFont;
   color: $accent;
   border-radius: 15px;
-}
 
-input[type="submit"]:hover {
-  color: $primary;
-  // border: 2px solid $primary;
+  &:hover, &:focus, &:active {
+    color: $primary;
+    // border: 2px solid $primary;
+
+  }
 }
 
 .placeholderText::placeholder {
@@ -254,7 +255,7 @@ img {
 .lowerReset {
   display: flex;
   // flex-direction: column;
-  padding: 6% 8% 0 8%;
+  padding: 4% 8% 6% 8%;
 }
 
 .speedButton,
@@ -268,6 +269,7 @@ input[type="reset"] {
 
   span {
     display: block;
+    
   }
 
   &:hover {
@@ -285,7 +287,7 @@ input[type="reset"] {
   margin-right: 4%;
   width: 46%;
   line-height: 1.3;
-  
+
   &:hover {
     cursor: pointer;
   }
@@ -293,12 +295,16 @@ input[type="reset"] {
 
 .lowerTrophy {
   padding: 3%;
-}
+  // display: flex;
+  // flex-wrap: wrap;
+  // justify-content: space-evenly;
 
-.lowerTrophy ul {
+  ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  }
+
 }
 
 .fa-trophy {

@@ -1,7 +1,9 @@
 // HEADER
 
-.yes:hover, .no:hover {
-    cursor: pointer;
-    color: white;
+.yes, .no {
+    &:hover, &:focus, &:active {
+        cursor: pointer;
+        color: white;
+    }
 }
 

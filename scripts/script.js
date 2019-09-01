@@ -1,5 +1,7 @@
 const soberApp = {};
 
+// PLUGS INS
+
 let headerTypeInstance = new TypeIt("#headerType", {
   cursor: false,
   speed: 75
@@ -36,10 +38,23 @@ soberApp.clickYes = function() {
   });
 };
 
+// soberApp.clickNo = function() {
+//   $(document).on("click", "#no", function() {
+//     soberApp.pageRedirect(
+//       "https://media2.giphy.com/media/CycIvRahkUp0Y/giphy.gif?cid=790b7611c69949b046cc33d83e51bcffcb69510c8b0536b9&rid=giphy.gif"
+//     );  
+//   });
+// };
+
+// soberApp.pageRedirect = (url) => {
+//   window.location.href = url;
+// }
+
 // WELCOME PAGE
 
 //listen for submit, save variables, switch to next screen
 soberApp.formSubmit = () => {
+
   $("form").on("submit", function(event) {
     event.preventDefault();
     $("body").addClass("displayOverflowWelcome");
@@ -161,6 +176,7 @@ soberApp.formReset = () => {
 soberApp.init = () => {
   headerTypeInstance.go();
   soberApp.clickYes();
+  // soberApp.clickNo();
   soberApp.getQuotes();
   soberApp.insertQuote();
   soberApp.clickKanye();

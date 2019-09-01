@@ -27,17 +27,21 @@ class Stopwatch {
       formattedTime = timeFormatter(time);
       watchElement.textContent = formattedTime;
 
-      const updateTime = 10;
+      const updateTime = 2;
+      const numberOfTrophies = 3;
       // console.log(time);
 
       // add trophy to trophyList (max 9 trophies appear)
       if (
         watchElement.textContent.slice(-2) % updateTime === 0 &&
-        time < updateTime * 10 * 1000
+        time < updateTime * (numberOfTrophies + 1) * 1000
       ) {
-        // 10 for 9 trophies* 1000 miliseconds
-        // watchElement.textContent.slice(-2) < updateTime*10) {
         $(".trophyList").append(`<li><i class="fas fa-trophy"></i></li>`);
+      } else if (
+        watchElement.textContent.slice(-2) % updateTime === 0 && time > updateTime * (numberOfTrophies + 1) * 1000
+        )  {
+        $(".trophyList").html(
+          `<li><i class="fas fa-trophy"></i></li><p>x ${Math.floor(time / updateTime / 1000)}</p>`);
       }
 
       if (watchElement.textContent.slice(-2) % updateTime === 0) {
