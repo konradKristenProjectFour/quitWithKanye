@@ -1,6 +1,7 @@
 class Stopwatch {
   constructor(watchElement) {
     let time = 0;
+    let trophies = 0;
     let interval;
     let offset;
 
@@ -29,27 +30,11 @@ class Stopwatch {
 
       let updateTime = 86400;
       updateTime = soberApp.retrieveSpeed();
-      const numberOfTrophies = 3;
-
-      // console.log(time);
-      // console.log(watchElement.textContent.slice(-2));
+      const trophyLimit = 3;
 
       // add trophy to trophyList (max trophies appear depending on numberOfTrophies)
-      if (
-        Math.floor(time / 1000) % updateTime === 0 &&
-        time < updateTime * (numberOfTrophies + 1) * 1000
-      ) {
-        $(".trophyList").append(`<li><i class="fas fa-trophy"></i></li>`);
-      } else if (
-        // after max number of trophies appear, we replace with a trophy and a multiplier next to it
-        Math.floor(time / 1000) % updateTime === 0 &&
-        time > updateTime * (numberOfTrophies + 1) * 1000
-      ) {
-        $(".trophyList").html(
-          `<li><i class="fas fa-trophy"></i></li><p>x ${Math.floor(
-            time / updateTime / 1000
-          )}</p>`
-        );
+      if (Math.floor(time / 1000) % updateTime === 0) {
+        this.trophyCounter();
       }
 
       if (Math.floor(time / 1000) % updateTime === 0) {
@@ -57,10 +42,10 @@ class Stopwatch {
         soberApp.getQuotes();
 
         // adds money on timed interval
-        $(".lowerMoney").html(
-          `<p>$${Math.floor(time / updateTime / 1000) *
-            soberApp.retrieveSpend()}</p>`
-        );
+        // $(".lowerMoney").html(
+        //   `<p>$${Math.floor(time / updateTime / 1000) *
+        //     soberApp.retrieveSpend()}</p>`
+        // );
       }
     };
 
@@ -76,9 +61,6 @@ class Stopwatch {
     //converts miliseconds into hours, minutes seconds
     function timeFormatter(timeInMilliseconds) {
       let time = new Date(timeInMilliseconds);
-
-      // console.log();
-
       let hours;
 
       //
@@ -87,9 +69,6 @@ class Stopwatch {
       } else {
         hours = (time.getHours() + 5).toString();
       }
-
-      // let hours = (Math.floor(time / 3600000)).toString();
-      // If we want hours rolling indefinitely, or we need to add days.
 
       let minutes = time.getMinutes().toString();
       let seconds = time.getSeconds().toString();
@@ -120,7 +99,26 @@ class Stopwatch {
     this.reset = function() {
       this.stop();
       time = 0;
+      trophies = 0;
       update(time);
+    };
+
+    this.trophyCounter = function() {
+      trophies = trophies + 1;
+      console.log(trophies);
+
+      if (trophies < 4) {
+        $(".trophyList").append(`<li><i class="fas fa-trophy"></i></li>`);
+      } else {
+        $(".trophyList").html(
+          `<li><i class="fas fa-trophy"></i></li><p>x ${trophies}</p>`
+        );
+      }
+
+      $(".lowerMoney").html(
+        `<p>$${trophies *
+          soberApp.retrieveSpend()}</p>`
+      );
     };
   }
 }
