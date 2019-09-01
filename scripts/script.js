@@ -15,7 +15,7 @@ let watch = new Stopwatch(timer);
 // HEADER PAGE
 
 soberApp.clickYes = function() {
-  $(document).on("click", "#yes", function() {
+  $(document).on("click keypress", "#yes", function() {
 
     $("header").addClass("animated slideOutLeft");
     $("body").addClass("displayOverflowHeader");
@@ -38,18 +38,6 @@ soberApp.clickYes = function() {
   });
 };
 
-// soberApp.clickNo = function() {
-//   $(document).on("click", "#no", function() {
-//     soberApp.pageRedirect(
-//       "https://media2.giphy.com/media/CycIvRahkUp0Y/giphy.gif?cid=790b7611c69949b046cc33d83e51bcffcb69510c8b0536b9&rid=giphy.gif"
-//     );  
-//   });
-// };
-
-// soberApp.pageRedirect = (url) => {
-//   window.location.href = url;
-// }
-
 // WELCOME PAGE
 
 //listen for submit, save variables, switch to next screen
@@ -62,7 +50,6 @@ soberApp.formSubmit = () => {
     watch.start();
 
     //declare variables based on user inputs
-    // let userName = soberApp.retrieveUserName();
     let vice = soberApp.retrieveVice();
     let spend = soberApp.retrieveSpend();
 
@@ -99,9 +86,6 @@ soberApp.formSubmit = () => {
 };
 
 //variables are declared outside submit form to be used in Stopwatch
-// soberApp.retrieveUserName = () => {
-//   return $('input[name="username"]').val();
-// };
 
 soberApp.retrieveVice = () => {
   return $('input[type=radio]:checked').val();
@@ -143,7 +127,7 @@ soberApp.getQuotes = function() {
     datatype: "json"
   })
     .then(function(result) {
-      // feed result into insertQuote if it excludes fuck
+      // feed result into insertQuote if it excludes fuck or sex
       if (result.indexOf("fuck") === -1 && result.indexOf("sex") === -1) {
         soberApp.insertQuote(result);
       } else {
@@ -201,7 +185,6 @@ soberApp.formReset = () => {
 soberApp.init = () => {
   headerTypeInstance.go();
   soberApp.clickYes();
-  // soberApp.clickNo();
   soberApp.getQuotes();
   soberApp.insertQuote();
   soberApp.clickKanye();
