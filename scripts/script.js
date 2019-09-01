@@ -5,22 +5,15 @@ let headerTypeInstance = new TypeIt("#headerType", {
   speed: 75
 });
 
-// let quoteTypeInstance = new TypeIt("#quoteType", {
-//   cursor: false,
-//   speed: 75
-// });
-
 let timer = document.getElementById("timer");
 let toggleBtn = document.getElementById("toggle");
 let resetBtn = document.getElementById("reset");
 let watch = new Stopwatch(timer);
 
-// HEADER
+// HEADER PAGE
 
 soberApp.clickYes = function() {
   $(document).on("click", "#yes", function() {
-    // $("header").addClass("removeSection");
-    // $(".welcome").removeClass("removeSection");
 
     $("header").addClass("animated slideOutLeft");
     $("body").addClass("displayOverflowHeader");
@@ -43,54 +36,7 @@ soberApp.clickYes = function() {
   });
 };
 
-// MAIN PAGE
-
-soberApp.baseUrl = `https://api.kanye.rest?format=text`;
-
-// Retrieve data from api
-soberApp.getQuotes = function() {
-  $.ajax({
-    url: soberApp.baseUrl,
-    method: "GET",
-    datatype: "json"
-  })
-    .then(function(result) {
-      // feed result into insertQuote if it excludes fuck
-      if (result.indexOf("fuck") === -1 && result.indexOf("sex") === -1) {
-        soberApp.insertQuote(result);
-      } else {
-        soberApp.getQuotes();
-      }
-    })
-    .fail(error => {
-      console.log(error);
-    });
-};
-
-// plugs insertQuote result into quoteContainer
-soberApp.insertQuote = function(newQuote) {
-  $(".quoteContainer").html(`<p>${newQuote}</p>`);
-  soberApp.shakeKanye();
-  // quoteTypeInstance.go();
-};
-
-//on demand quotes
-soberApp.clickKanye = function() {
-  $(".kanyeButton").on("click", function() {
-    soberApp.getQuotes();
-    soberApp.shakeKanye();
-  });
-};
-
-soberApp.shakeKanye = function() {
-  $(".kanyeButton").addClass("animated shake");
-
-  let element = document.getElementById("kanyeButton");
-
-  element.addEventListener("animationend", function() {
-    $(".kanyeButton").removeClass("animated shake");
-  });
-};
+// WELCOME PAGE
 
 //listen for submit, save variables, switch to next screen
 soberApp.formSubmit = () => {
@@ -150,7 +96,58 @@ soberApp.retrieveSpend = () => {
   return Number($('input[name="spend"]').val());
 };
 
-//reset button refreshes page
+// MAIN PAGE
+
+soberApp.baseUrl = `https://api.kanye.rest?format=text`;
+
+// Retrieve data from api
+soberApp.getQuotes = function() {
+  $.ajax({
+    url: soberApp.baseUrl,
+    method: "GET",
+    datatype: "json"
+  })
+    .then(function(result) {
+      // feed result into insertQuote if it excludes fuck
+      if (result.indexOf("fuck") === -1 && result.indexOf("sex") === -1) {
+        soberApp.insertQuote(result);
+      } else {
+        soberApp.getQuotes();
+      }
+    })
+    .fail(error => {
+      console.log(error);
+    });
+};
+
+// plugs insertQuote result into quoteContainer
+soberApp.insertQuote = function(newQuote) {
+  $(".quoteContainer").html(`<p>${newQuote}</p>`);
+  soberApp.shakeKanye();
+};
+
+//on demand quotes
+soberApp.clickKanye = function() {
+  $(".kanyeButton").on("click", function() {
+    soberApp.getQuotes();
+    soberApp.shakeKanye();
+  });
+};
+
+
+// Animation to shake Kanye
+soberApp.shakeKanye = function() {
+  $(".kanyeButton").addClass("animated shake");
+
+  let element = document.getElementById("kanyeButton");
+
+  element.addEventListener("animationend", function() {
+    $(".kanyeButton").removeClass("animated shake");
+  });
+};
+
+
+//reset button rests all the form information and brings you back to the Welcome Page
 soberApp.formReset = () => {
   $("form").on("reset", function(event) {
     watch.reset();
