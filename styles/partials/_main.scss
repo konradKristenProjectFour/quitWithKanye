@@ -269,18 +269,12 @@ input[type="reset"] {
 
   span {
     display: block;
-    
   }
 
   &:hover {
     background-color: $accent;
     color: black;
   }
-}
-
-input[type="reset"] {
-  margin-left: 4%;
-  width: 46%;
 }
 
 .speedButton {
@@ -291,6 +285,16 @@ input[type="reset"] {
   &:hover {
     cursor: pointer;
   }
+}
+
+.highSpeed {
+    background-color: $accent;
+    color: black;
+}
+
+input[type="reset"] {
+  margin-left: 4%;
+  width: 46%;
 }
 
 .lowerTrophy {
@@ -312,3 +316,5 @@ input[type="reset"] {
   color: $accent;
   margin: 5px;
 }
+
+

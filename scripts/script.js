@@ -111,6 +111,26 @@ soberApp.retrieveSpend = () => {
   return Number($('input[name="spend"]').val());
 };
 
+soberApp.toggleSpeed = () => {
+    $("div.speedButton").on("click", function() {
+      if (!$("div.speedButton").hasClass("highSpeed") === true) {
+        $("div.speedButton").addClass("highSpeed");
+        console.log("High Speed")
+      } else {      
+        $("div.speedButton").removeClass("highSpeed");
+        console.log("Normal Speed");
+      }
+    }) 
+};
+
+soberApp.retrieveSpeed = () => {
+  if (!$("div.speedButton").hasClass("highSpeed")) {
+    return 86400;
+  } else {
+    return 5;
+  }
+}
+
 // MAIN PAGE
 
 soberApp.baseUrl = `https://api.kanye.rest?format=text`;
@@ -132,6 +152,9 @@ soberApp.getQuotes = function() {
     })
     .fail(error => {
       console.log(error);
+      soberApp.insertQuote(
+        "If you have the opportunity to play this game of life you need to appreciate every moment."
+      );
     });
 };
 
@@ -166,7 +189,9 @@ soberApp.shakeKanye = function() {
 soberApp.formReset = () => {
   $("form").on("reset", function(event) {
     watch.reset();
+    
     $("ul").html("");
+    $(".numberBox").removeClass("badInput");
 
     $(".dashboard").addClass("removeSection");
     $(".welcome").removeClass("removeSection");
@@ -182,6 +207,7 @@ soberApp.init = () => {
   soberApp.clickKanye();
   soberApp.formSubmit();
   soberApp.formReset();
+  soberApp.toggleSpeed();
 };
 
 $(document).ready(function() {

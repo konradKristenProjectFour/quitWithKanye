@@ -640,11 +640,6 @@ input[type="reset"]:hover {
   color: black;
 }
 
-input[type="reset"] {
-  margin-left: 4%;
-  width: 46%;
-}
-
 .speedButton {
   margin-right: 4%;
   width: 46%;
@@ -653,6 +648,16 @@ input[type="reset"] {
 
 .speedButton:hover {
   cursor: pointer;
+}
+
+.highSpeed {
+  background-color: #27ec4d;
+  color: black;
+}
+
+input[type="reset"] {
+  margin-left: 4%;
+  width: 46%;
 }
 
 .lowerTrophy {
