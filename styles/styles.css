@@ -635,6 +635,10 @@ input[type="reset"] {
   line-height: 1.3;
 }
 
+.speedButton:hover {
+  cursor: pointer;
+}
+
 .lowerTrophy {
   padding: 3%;
 }

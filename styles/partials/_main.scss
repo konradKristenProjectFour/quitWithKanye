@@ -285,6 +285,10 @@ input[type="reset"] {
   margin-right: 4%;
   width: 46%;
   line-height: 1.3;
+  
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .lowerTrophy {

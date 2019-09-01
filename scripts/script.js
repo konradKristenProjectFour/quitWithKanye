@@ -59,7 +59,7 @@ soberApp.formSubmit = () => {
 
     } else {
 
-      // adds vice to the sentecne below the time
+      // adds vice to the sentence below the time
       $(".viceSelection").html(`${vice}`);
 
       $(".welcome").addClass("animated slideOutLeft");
@@ -84,9 +84,9 @@ soberApp.formSubmit = () => {
 };
 
 //variables are declared outside submit form to be used in Stopwatch
-soberApp.retrieveUserName = () => {
-  return $('input[name="username"]').val();
-};
+// soberApp.retrieveUserName = () => {
+//   return $('input[name="username"]').val();
+// };
 
 soberApp.retrieveVice = () => {
   return $('input[type=radio]:checked').val();
