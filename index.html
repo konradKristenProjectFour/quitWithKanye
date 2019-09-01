@@ -20,7 +20,7 @@
 
 <body>
     <header id="header">
-        <h1 id="headerType">Ready to quit<span class="lineTwo">with Kanye?</span><span tabindex="1" class="yes" id="yes" role="button">y</span> / <a href="https://media2.giphy.com/media/CycIvRahkUp0Y/giphy.gif?cid=790b7611c69949b046cc33d83e51bcffcb69510c8b0536b9&rid=giphy.gif" class="no" id="no" role="button">n</a>
+        <h1 id="headerType">Ready to quit<span class="lineTwo">with Kanye?</span><span tabindex="1" class="yes" id="yes" role="button">y</span> / <a href="https://media2.giphy.com/media/CycIvRahkUp0Y/giphy.gif?cid=790b7611c69949b046cc33d83e51bcffcb69510c8b0536b9&rid=giphy.gif" class="no" id="no" role="button" tabindex="2">n</a>
         </h1>
 
         <!-- I understand there may be some semantic issues with using spans to act as a button. However getting this to work seamlessly with the TypeIt plug-in has made this a bit difficult otherwise.
@@ -139,9 +139,9 @@
                             </div>
 
                             <div class="lowerReset">
-                                <div class="speedButton">Turbo <span>Speed</span></div>
+                                <button type="button" class="speedButton" tabindex="3">Turbo <span>Speed</span></button>
                                 <label class="visuallyHidden" for="reset">Reset</label>
-                                <input type="reset" id="reset" value="Reset&#13;&#10;Counter" name="reset">
+                                <input type="reset" id="reset" value="Reset&#13;&#10;Counter" name="reset" tabindex="4">
                             </div>
                         </div><!-- /.reset -->
                     </div><!-- /.lowerDash -->

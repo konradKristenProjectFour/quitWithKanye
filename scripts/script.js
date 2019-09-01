@@ -15,25 +15,34 @@ let watch = new Stopwatch(timer);
 // HEADER PAGE
 
 soberApp.clickYes = function() {
-  $(document).on("click keypress", "#yes", function() {
+  $(document).on("click keydown", "#yes", function(event) {
+    if (
+      event.type === "click" ||
+      (event.type === "keydown" && (event.which === 13 || event.which === 32))
+    ) {
+      //submit(); submit your form
+      soberApp.yesAction();
+    }
+  });
+};
 
-    $("header").addClass("animated slideOutLeft");
-    $("body").addClass("displayOverflowHeader");
+soberApp.yesAction = function() {
+  $("header").addClass("animated slideOutLeft");
+  $("body").addClass("displayOverflowHeader");
 
-    let elementWelcome = document.getElementById("header");
+  let elementWelcome = document.getElementById("header");
+
+  elementWelcome.addEventListener("animationend", function() {
+    $("header").removeClass("animated slideOutLeft");
+    $("header").addClass("removeSection");
+    $(".welcome").addClass("animated slideInRight");
+    $(".welcome").removeClass("removeSection");
+
+    let elementWelcome = document.getElementById("welcome");
 
     elementWelcome.addEventListener("animationend", function() {
-      $("header").removeClass("animated slideOutLeft");
-      $("header").addClass("removeSection");
-      $(".welcome").addClass("animated slideInRight");
-      $(".welcome").removeClass("removeSection");
-
-      let elementWelcome = document.getElementById("welcome");
-
-      elementWelcome.addEventListener("animationend", function() {
-        $("body").removeClass("displayOverflowHeader");
-        $(".welcome").removeClass("animated slideInRight");
-      });
+      $("body").removeClass("displayOverflowHeader");
+      $(".welcome").removeClass("animated slideInRight");
     });
   });
 };
@@ -42,7 +51,6 @@ soberApp.clickYes = function() {
 
 //listen for submit, save variables, switch to next screen
 soberApp.formSubmit = () => {
-
   $("form").on("submit", function(event) {
     event.preventDefault();
     $("body").addClass("displayOverflowWelcome");
@@ -56,11 +64,8 @@ soberApp.formSubmit = () => {
     console.log(vice);
 
     if (spend < 1) {
-      
       $(".numberBox").addClass("badInput");
-
     } else {
-
       // adds vice to the sentence below the time
       $(".viceSelection").html(`${vice}`);
 
@@ -88,7 +93,7 @@ soberApp.formSubmit = () => {
 //variables are declared outside submit form to be used in Stopwatch
 
 soberApp.retrieveVice = () => {
-  return $('input[type=radio]:checked').val();
+  return $("input[type=radio]:checked").val();
 };
 
 soberApp.retrieveSpend = () => {
@@ -96,24 +101,24 @@ soberApp.retrieveSpend = () => {
 };
 
 soberApp.toggleSpeed = () => {
-    $("div.speedButton").on("click", function() {
-      if (!$("div.speedButton").hasClass("highSpeed") === true) {
-        $("div.speedButton").addClass("highSpeed");
-        console.log("High Speed")
-      } else {      
-        $("div.speedButton").removeClass("highSpeed");
-        console.log("Normal Speed");
-      }
-    }) 
+  $("button.speedButton").on("click", function() {
+    if (!$("button.speedButton").hasClass("highSpeed") === true) {
+      $("button.speedButton").addClass("highSpeed");
+      console.log("High Speed");
+    } else {
+      $("button.speedButton").removeClass("highSpeed");
+      console.log("Normal Speed");
+    }
+  });
 };
 
 soberApp.retrieveSpeed = () => {
-  if (!$("div.speedButton").hasClass("highSpeed")) {
+  if (!$("button.speedButton").hasClass("highSpeed")) {
     return 86400;
   } else {
     return 5;
   }
-}
+};
 
 // MAIN PAGE
 
@@ -156,7 +161,6 @@ soberApp.clickKanye = function() {
   });
 };
 
-
 // Animation to shake Kanye
 soberApp.shakeKanye = function() {
   $(".kanyeButton").addClass("animated shake");
@@ -168,12 +172,11 @@ soberApp.shakeKanye = function() {
   });
 };
 
-
 //reset button rests all the form information and brings you back to the Welcome Page
 soberApp.formReset = () => {
   $("form").on("reset", function(event) {
     watch.reset();
-    
+
     $("ul").html("");
     $(".numberBox").removeClass("badInput");
 
