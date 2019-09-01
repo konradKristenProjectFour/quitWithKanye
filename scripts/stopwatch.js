@@ -15,7 +15,7 @@ class Stopwatch {
     };
 
     const update = () => {
-      // arrow function helps "this" within refers to "update"
+      // arrow function allows this. to access the parent
 
       // if the stopwatch is on, time is equal to time + delta
       if (this.isOn) {
@@ -27,26 +27,39 @@ class Stopwatch {
       formattedTime = timeFormatter(time);
       watchElement.textContent = formattedTime;
 
-      const updateTime = 10;
-      // console.log(time);
+      let updateTime = 86400;
+      updateTime = soberApp.retrieveSpeed();
+      const numberOfTrophies = 3;
 
-      // add trophy to trophyList (max 9 trophies appear)
+      // console.log(time);
+      // console.log(watchElement.textContent.slice(-2));
+
+      // add trophy to trophyList (max trophies appear depending on numberOfTrophies)
       if (
-        watchElement.textContent.slice(-2) % updateTime === 0 &&
-        time < updateTime * 10 * 1000
+        Math.floor(time / 1000) % updateTime === 0 &&
+        time < updateTime * (numberOfTrophies + 1) * 1000
       ) {
-        // 10 for 9 trophies* 1000 miliseconds
-        // watchElement.textContent.slice(-2) < updateTime*10) {
         $(".trophyList").append(`<li><i class="fas fa-trophy"></i></li>`);
+      } else if (
+        // after max number of trophies appear, we replace with a trophy and a multiplier next to it
+        Math.floor(time / 1000) % updateTime === 0 &&
+        time > updateTime * (numberOfTrophies + 1) * 1000
+      ) {
+        $(".trophyList").html(
+          `<li><i class="fas fa-trophy"></i></li><p>x ${Math.floor(
+            time / updateTime / 1000
+          )}</p>`
+        );
       }
 
-      if (watchElement.textContent.slice(-2) % updateTime === 0) {
+      if (Math.floor(time / 1000) % updateTime === 0) {
         //refreshes quote on timed interval
         soberApp.getQuotes();
 
         // adds money on timed interval
         $(".lowerMoney").html(
-          `<p>$${(watchElement.textContent.slice(-2) / updateTime) * soberApp.retrieveSpend()}</p>`
+          `<p>$${Math.floor(time / updateTime / 1000) *
+            soberApp.retrieveSpend()}</p>`
         );
       }
     };
@@ -62,14 +75,13 @@ class Stopwatch {
 
     //converts miliseconds into hours, minutes seconds
     function timeFormatter(timeInMilliseconds) {
-      
       let time = new Date(timeInMilliseconds);
 
       // console.log();
 
       let hours;
 
-      // 
+      //
       if (time.getHours() >= 19 && time.getHours() <= 23) {
         hours = (time.getHours() - 19).toString();
       } else {

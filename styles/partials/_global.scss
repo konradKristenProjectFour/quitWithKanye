@@ -3,26 +3,26 @@
 $primary: white;
 $secondary: rgba(0, 0, 0, 0);
 $accent: #27ec4d;
-$baseFont: 'Open Sans', sans-serif;
+$baseFont: "Open Sans", sans-serif;
 $specialFont: "Nanum Pen Script", cursive;
 
 // GLOBAL STYLES
 
 html {
   font-family: $baseFont;
-  background: black; 
-  color: white; 
-  text-align: center; 
+  background: black;
+  color: white;
+  text-align: center;
   font-size: 10px;
 }
 
 body {
-background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-  url("../images/background.png");
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/background.png");
   margin: 0 auto;
   color: white;
   font-size: 2rem;
-  position: relative; 
+  position: relative;
 
   // make each page consistent
   background-repeat: no-repeat;
@@ -32,7 +32,8 @@ background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
 }
 
 // added this to vertically center the the header and the welcome page
-h1, .welcomeSub {
+h1,
+.welcomeSub {
   margin: 0;
   position: absolute;
   top: 50%;
@@ -49,18 +50,23 @@ h1, .welcomeSub {
 h1,
 h2 {
   font-family: $specialFont;
-  font-size: 7rem;
-  text-transform: uppercase;
   color: $accent;
   margin-bottom: 5vh;
   text-align: center;
-  .lineTwo, .lineThree {
+  .lineTwo,
+  .lineThree {
     display: block;
   }
 }
 
+h1 {
+  font-size: 7rem;
+}
+
 h2 {
-  font-size: 10rem;
+  font-size: 15rem;
+  margin-bottom: 0;
+  line-height: 0.7;
 }
 
 h3 {
@@ -68,23 +74,58 @@ h3 {
   margin: 15px 0;
 }
 
-P {
+h4 {
+  margin-bottom: 11vh;
+  font-family: $specialFont;
+  font-size: 7rem;
+  color: $accent;
+}
+
+a {
+  color: $accent;
+  text-decoration: none;
+  &:visited {
+    color: $accent;
+  }
+}
+
+p {
   font-size: 1.8rem;
 }
 
-p, 
+.clock p {
+  color: $accent;
+  font-family: $specialFont;
+  font-size: 3.7rem;
+}
+
+p,
 input[type="username"],
-input[type="text"], 
+input[type="text"],
 input[type="number"] {
   line-height: 1.6;
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
 }
 
-input[type="submit"] {
-  font-size: 4.5rem;
+.lowerMoney {
+  p {
+    text-align: center;
+    line-height: 0.9;
+    font-size: 10rem;
+    font-family: "Nanum Pen Script", cursive;
+  }
 }
 
-#timer {
-  font-size: 20rem; 
+.trophyList {
+  p {
+    font-size: 7rem;
+    font-family: $specialFont;
+    color: $accent;
+    line-height: 0.8;
+  }
+}
+
+input[type="submit"] {
+  font-size: 5rem;
 }
