@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link href="https://fonts.googleapis.com/css?family=Nanum+Pen+Script%7COpen+Sans:300,400,700&display=swap"
-        rel="stylesheet">
 
-    
     <script src="https://kit.fontawesome.com/ddfa5da3a1.js"></script>
 
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/kanyeFavicon.png">
+
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Pen+Script%7COpen+Sans:300,400,700&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="./styles/styles.css">
 
@@ -20,8 +21,8 @@
 
 <body>
     <header id="header">
-        <h1 id="headerType">Want to quit<span class="lineTwo">with Kanye?</span><span class="yes" id="yes">y</span> / <span
-                class="no" id="no">n</span>
+        <h1 id="headerType">Ready to quit<span class="lineTwo">with Kanye?</span><span class="yes" id="yes">y</span> /
+            <span class="no" id="no">n</span>
         </h1>
 
     </header>
@@ -30,52 +31,64 @@
         <form action="#" method="#" class="initialForm" name="initialForm">
             <section class="welcome removeSection" id="welcome">
                 <div class="welcomeSub wrapper">
-                    <p>Everyone has a bad habit they want to kick. Don’t beat yourself up about it. Decide to start and
-                        take it day by day.</p> 
-                        
-                        <!-- <p>So what do you say, are you ready to quit with Kanye?</p> -->
+                    <!-- <p>Everyone has a bad habit they want to kick. Don’t beat yourself up about it. Decide to start and
+                        take it day by day.</p>  -->
+
+
                     <div class="textBoxes">
-                        <!-- username start-->
-                        <!-- <label class="visuallyHidden" for="username">Name</label>
-                        <input class="placeholderText" type="username" name="username" id="username" placeholder="Name"> -->
-                        <!-- habit start-->
 
-
-                        <!-- <input class="placeholderText" type="text" name="habit" id="habit" placeholder="Vice"> -->
+                        <h4>Select Your Vice</h4>
 
                         <fieldset>
 
                             <legend class="visuallyHidden">Select your vice.</legend>
 
-                            <div class="radioBox foodIcon">
-                                <input type="radio" name="vice" value="food" id="food" checked="true" />
-                                <label for="food" class="toggleLabel foodLabel"><i class="fas fa-hamburger"></i><span class="visuallyHidden">Food</span></label>
+                            <div class="radioBox junkFoodIcon">
+                                <input type="radio" name="vice" value="junk food" id="junkFood" checked="true" />
+
+                                <label for="junkFood" class="toggleLabel foodLabel">
+                                    <i class="fas fa-hamburger"></i><span class="visuallyHidden">Junk Food</span>
+                                </label>
                             </div>
 
                             <div class="radioBox alcoholIcon">
                                 <input type="radio" name="vice" value="alcohol" id="alcohol" />
-                                <label for="alcohol" class="toggleLabel alcoholLabel animated hover"><i class="fas fa-glass-martini-alt"></i><span class="visuallyHidden">Alcohol</span></label>
+
+                                <label for="alcohol" class="toggleLabel alcoholLabel animated hover">
+                                    <i class="fas fa-glass-martini-alt"></i><span class="visuallyHidden">Alcohol</span>
+                                </label>
                             </div>
 
                             <div class="radioBox drugsIcon">
                                 <input type="radio" name="vice" value="drugs" id="drugs" />
-                                <label for="drugs" class="toggleLabel drugLabel"><i class="fas fa-capsules"></i><span class="visuallyHidden">Drugs</span></label>
+
+                                <label for="drugs" class="toggleLabel drugLabel">
+                                    <i class="fas fa-capsules"></i><span class="visuallyHidden">Drugs</span>
+                                </label>
                             </div>
 
-                            <div class="radioBox sexIcon">
-                                <input type="radio" name="vice" value="sex" id="sex" />
-                                <label for="sex" class="toggleLabel sexLabel"><i class="fas fa-heart-broken"></i><span class="visuallyHidden">Sex</span></label>
+                            <div class="radioBox unhealthyRelationshipsIcon">
+                                <input type="radio" name="vice" value="unhealthy relationships"
+                                    id="unhealthyRelationships" />
+
+                                <label for="unhealthyRelationships" class="toggleLabel unhealthyRelationshipsLabel">
+                                    <i class="fas fa-heart-broken"></i><span class="visuallyHidden">Unhealthy
+                                        Relationships</span>
+                                </label>
                             </div>
                         </fieldset>
 
                         <!-- spend start-->
-                        <label class="visuallyHidden" for="spend">Daily spend?</label>
-                        <input class="placeholderText" type="number" name="spend" id="spend" placeholder="Daily spend?"
-                            min="1" max="1000">
+                        <div class="numberBox">
+                            <label class="visuallyHidden" for="spend">Daily spend?</label>
+                            <input class="placeholderText" type="number" name="spend" id="spend"
+                                placeholder="Daily spend?" min="1" max="1000">
+                        </div>
+
                     </div><!-- /.textBoxes-->
                     <div class="submitBox">
-                        
-                        <input type="submit" id="toggle" value="Hell Ye" name="submit">
+
+                        <input type="submit" id="toggle" value="Start" name="submit">
                         <label class="visuallyHidden" class="submitLabel" for="submit">Submit</label>
                     </div><!-- /.submitBox-->
                 </div><!-- /.welcomeSub wrapper -->
@@ -97,7 +110,7 @@
 
                     <div class="clock">
                         <h2 id="timer">00 : 00 : 00 </h2>
-                        <h2>Time passed since you quit with Kanye</h2>
+                        <p>since you quit <span class="viceSelection"></span> with Kanye</p>
                     </div><!-- /.clock -->
 
                     <div class="lowerDash">
@@ -105,8 +118,10 @@
                             <div class="upperTrophy">
                                 <h3>Achievements</h3>
                             </div>
-                            <ul class="trophyList">
-                            </ul>
+                            <div class="lowerTrophy">
+                                <ul class="trophyList">
+                                </ul>
+                            </div>
                         </div><!-- /.trophyCase -->
                         <div class="money">
                             <div class="upperMoney">
@@ -118,14 +133,13 @@
                         </div><!-- /.money -->
                         <div class="reset">
                             <div class="upperReset">
-                                <h3>Reset</h3>
+                                <h3>Settings</h3>
                             </div>
 
                             <div class="lowerReset">
-                                <button>Toggle Speed</button>
-                                <button>Toggle Kim</button>
+                                <button class="speedButton">Toggle <span>Speed</span></button>
                                 <label class="visuallyHidden" for="reset">Reset</label>
-                                <input type="reset" id="reset" value="Need a reset?" name="reset">
+                                <input type="reset" id="reset" value="Reset&#13;&#10;Counter" name="reset">
                             </div>
                         </div><!-- /.reset -->
                     </div><!-- /.lowerDash -->

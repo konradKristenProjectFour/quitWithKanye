@@ -5,7 +5,11 @@
   top: -3000px;
 }
 
-.displayOverflow {
+.displayOverflowHeader {
+  overflow: hidden;
+}
+
+.displayOverflowWelcome {
   overflow: hidden;
 }
 
@@ -66,6 +70,12 @@ i:hover {
 
 input[type="username"],
 input[type="text"],
+.numberBox {
+  margin-top: 10vh;
+}
+
+input[type="username"],
+input[type="text"],
 input[type="number"] {
   color: white;
   background: rgba(0, 0, 0, 0);
@@ -74,8 +84,19 @@ input[type="number"] {
   padding: 5px 0;
   width: 35%;
   min-width: 300px;
-  margin-top: 10vh;
   text-align: center;
+}
+
+.numberBox {
+  border: 2px solid rgba(0, 0, 0, 0);
+}
+
+.badInput {
+  border: 2px solid red;
+
+  &:hover {
+    border: 2px solid red;
+  }
 }
 
 input[type="username"],
@@ -98,30 +119,19 @@ input[type="number"] {
 }
 
 input[type="submit"] {
+  background: $secondary;
+  padding: 12px 20px 8px 20px;
   margin-top: 10vh;
   border: none;
-  border: 2px solid $accent;
+  // border: 2px solid $accent;
   font-family: $specialFont;
   color: $accent;
   border-radius: 15px;
 }
 
-input[type="reset"] {
-  border: none;
-  color: $accent;
-}
-
-input[type="submit"],
-input[type="reset"] {
-  background: $secondary;
-  padding: 12px 20px 8px 20px;
-
-  text-transform: uppercase;
-}
-
 input[type="submit"]:hover {
   color: $primary;
-    border: 2px solid $primary;
+  // border: 2px solid $primary;
 }
 
 .placeholderText::placeholder {
@@ -134,14 +144,11 @@ input[type="submit"]:hover {
   }
 }
 
+// MAIN PAGE
+
 .clock {
   border: none;
   margin: 0;
-
-  h2 {
-    font-size: 4rem;
-    margin-bottom: 0;
-  }
 }
 
 .dashboardSub {
@@ -153,7 +160,7 @@ input[type="submit"]:hover {
 
 .quotes {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: row-reverse;
 }
 
 .kanyeContainer {
@@ -161,26 +168,65 @@ input[type="submit"]:hover {
 }
 
 .kanyeButton {
-  //   border-radius: 100%;
-  //   background: $accent;
   width: 120px;
 }
 
 .quoteContainer {
-  padding-right: 15px;
+  padding-left: 30px;
   flex: 1 0 calc(100% - 120px);
-  text-align: right;
+  text-align: left;
 
   p {
-    padding: 4% 4% 0 0;
+    display: inline-block;
+    padding: 20px;
+    font-size: 2rem;
+    border: 2px solid $accent;
+    border-radius: 15px;
+    position: relative;
+
+    // &::before {
+    //   content: "";
+    //   position: absolute;
+    //   left: 0;
+    //   height: 100px;
+    //   width: 100px;
+    //   background-color: red;
+    // }
+
+    &::before {
+      content: "";
+      width: 0px;
+      height: 0px;
+      position: absolute;
+      border-left: 10px solid transparent;
+      border-right: 10px solid $accent;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      bottom: 20%;
+      left: -21px;
+    }
+
+    // &::after {
+    //   content: "";
+    //   width: 0px;
+    //   height: 0px;
+    //   position: absolute;
+    //   border-left: 10px solid transparent;
+    //   border-right: 10px solid $accent;
+    //   border-top: 10px solid transparent;
+    //   border-bottom: 10px solid transparent;
+    //   left: -17px;
+    // }
   }
 }
+
+// SPEECH BUBBLE TEST END
 
 img {
   display: block;
   width: 100%;
 
-  transform: rotate(25deg);
+  transform: rotate(6deg);
 
   filter: drop-shadow(2px 2px 0 $accent) drop-shadow(2px -2px 0 $accent)
     drop-shadow(-2px -2px 0 $accent) drop-shadow(-2px 2px 0 $accent);
@@ -202,23 +248,52 @@ img {
 .money {
   p {
     color: $accent;
-    font-size: 6rem;
-    margin: 3vh 0;
-    text-align: center;
   }
 }
 
 .lowerReset {
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
+  padding: 6% 8% 0 8%;
 }
 
-.trophy ul {
+button,
+input[type="reset"] {
+  border: 2px solid $accent;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0);
+  color: $accent;
+  padding: 3%;
+  // margin-top: 10%;
+
+  span {
+    display: block;
+  }
+
+  &:hover {
+    background-color: $accent;
+    color: black;
+  }
+}
+
+input[type="reset"] {
+  margin-left: 4%;
+  width: 46%;
+}
+
+.speedButton {
+  margin-right: 4%;
+  width: 46%;
+}
+
+.lowerTrophy {
+  padding: 3%;
+}
+
+.lowerTrophy ul {
   display: flex;
   flex-wrap: wrap;
-  // justify-content: space-around;
-  // align-content: space-between;
-  padding: 5%;
+  justify-content: space-evenly;
 }
 
 .fa-trophy {

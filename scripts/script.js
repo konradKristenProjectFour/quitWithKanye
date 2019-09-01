@@ -1,16 +1,21 @@
 const soberApp = {};
 
-let myTypeItInstance = new TypeIt("#headerType", {
+let headerTypeInstance = new TypeIt("#headerType", {
   cursor: false,
   speed: 75
 });
+
+// let quoteTypeInstance = new TypeIt("#quoteType", {
+//   cursor: false,
+//   speed: 75
+// });
 
 let timer = document.getElementById("timer");
 let toggleBtn = document.getElementById("toggle");
 let resetBtn = document.getElementById("reset");
 let watch = new Stopwatch(timer);
 
-// WELCOME PAGE
+// HEADER
 
 soberApp.clickYes = function() {
   $(document).on("click", "#yes", function() {
@@ -18,7 +23,7 @@ soberApp.clickYes = function() {
     // $(".welcome").removeClass("removeSection");
 
     $("header").addClass("animated slideOutLeft");
-    $("body").addClass("displayOverflow");
+    $("body").addClass("displayOverflowHeader");
 
     let elementWelcome = document.getElementById("header");
 
@@ -31,7 +36,7 @@ soberApp.clickYes = function() {
       let elementWelcome = document.getElementById("welcome");
 
       elementWelcome.addEventListener("animationend", function() {
-        $("body").removeClass("displayOverflow");
+        $("body").removeClass("displayOverflowHeader");
         $(".welcome").removeClass("animated slideInRight");
       });
     });
@@ -65,19 +70,25 @@ soberApp.getQuotes = function() {
 // plugs insertQuote result into quoteContainer
 soberApp.insertQuote = function(newQuote) {
   $(".quoteContainer").html(`<p>${newQuote}</p>`);
+  soberApp.shakeKanye();
+  // quoteTypeInstance.go();
 };
 
 //on demand quotes
 soberApp.clickKanye = function() {
   $(".kanyeButton").on("click", function() {
     soberApp.getQuotes();
-    $(".kanyeButton").addClass("animated shake");
+    soberApp.shakeKanye();
+  });
+};
 
-    let element = document.getElementById("kanyeButton");
+soberApp.shakeKanye = function() {
+  $(".kanyeButton").addClass("animated shake");
 
-    element.addEventListener("animationend", function() {
-      $(".kanyeButton").removeClass("animated shake");
-    });
+  let element = document.getElementById("kanyeButton");
+
+  element.addEventListener("animationend", function() {
+    $(".kanyeButton").removeClass("animated shake");
   });
 };
 
@@ -85,32 +96,44 @@ soberApp.clickKanye = function() {
 soberApp.formSubmit = () => {
   $("form").on("submit", function(event) {
     event.preventDefault();
+    $("body").addClass("displayOverflowWelcome");
+
     watch.start();
 
     //declare variables based on user inputs
     // let userName = soberApp.retrieveUserName();
-    // let habit = soberApp.retrieveHabit();
+    let vice = soberApp.retrieveVice();
     let spend = soberApp.retrieveSpend();
 
-    $("body").addClass("displayOverflow");
-    $(".welcome").addClass("animated slideOutLeft");
-    
+    console.log(vice);
 
-    let elementWelcome = document.getElementById("welcome");
+    if (spend < 1) {
+      
+      $(".numberBox").addClass("badInput");
 
-    elementWelcome.addEventListener("animationend", function() {
-      $(".welcome").removeClass("animated slideOutLeft");
-      $(".welcome").addClass("removeSection");
-      $(".dashboard").addClass("animated slideInRight");
-      $(".dashboard").removeClass("removeSection");
+    } else {
 
-      let elementDashboard = document.getElementById("dashboard");
+      // adds vice to the sentecne below the time
+      $(".viceSelection").html(`${vice}`);
 
-      elementDashboard.addEventListener("animationend", function() {
-        $("body").removeClass("displayOverflow");
-        $(".dashboard").removeClass("animated slideInRight");
+      $(".welcome").addClass("animated slideOutLeft");
+
+      let elementWelcome = document.getElementById("welcome");
+
+      elementWelcome.addEventListener("animationend", function() {
+        $(".welcome").removeClass("animated slideOutLeft");
+        $(".welcome").addClass("removeSection");
+        $(".dashboard").addClass("animated slideInRight");
+        $(".dashboard").removeClass("removeSection");
+
+        let elementDashboard = document.getElementById("dashboard");
+
+        elementDashboard.addEventListener("animationend", function() {
+          $("body").removeClass("displayOverflowWelcome");
+          $(".dashboard").removeClass("animated slideInRight");
+        });
       });
-    });
+    }
   });
 };
 
@@ -119,8 +142,8 @@ soberApp.retrieveUserName = () => {
   return $('input[name="username"]').val();
 };
 
-soberApp.retrieveHabit = () => {
-  return $('input[name="habit"]').val();
+soberApp.retrieveVice = () => {
+  return $('input[type=radio]:checked').val();
 };
 
 soberApp.retrieveSpend = () => {
@@ -139,7 +162,7 @@ soberApp.formReset = () => {
 };
 
 soberApp.init = () => {
-  myTypeItInstance.go();
+  headerTypeInstance.go();
   soberApp.clickYes();
   soberApp.getQuotes();
   soberApp.insertQuote();

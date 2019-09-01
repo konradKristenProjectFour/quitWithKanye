@@ -242,7 +242,8 @@ body {
   height: 100vh;
 }
 
-h1, .welcomeSub {
+h1,
+.welcomeSub {
   margin: 0;
   position: absolute;
   top: 50%;
@@ -260,21 +261,26 @@ h1, .welcomeSub {
 h1,
 h2 {
   font-family: "Nanum Pen Script", cursive;
-  font-size: 7rem;
-  text-transform: uppercase;
   color: #27ec4d;
   margin-bottom: 5vh;
   text-align: center;
 }
 
-h1 .lineTwo, h1 .lineThree,
+h1 .lineTwo,
+h1 .lineThree,
 h2 .lineTwo,
 h2 .lineThree {
   display: block;
 }
 
+h1 {
+  font-size: 7rem;
+}
+
 h2 {
-  font-size: 10rem;
+  font-size: 15rem;
+  margin-bottom: 0;
+  line-height: 0.7;
 }
 
 h3 {
@@ -282,8 +288,21 @@ h3 {
   margin: 15px 0;
 }
 
-P {
+h4 {
+  margin-bottom: 11vh;
+  font-family: "Nanum Pen Script", cursive;
+  font-size: 7rem;
+  color: #27ec4d;
+}
+
+p {
   font-size: 1.8rem;
+}
+
+.clock p {
+  color: #27ec4d;
+  font-family: "Nanum Pen Script", cursive;
+  font-size: 3.7rem;
 }
 
 p,
@@ -295,12 +314,15 @@ input[type="number"] {
   font-weight: 300;
 }
 
-input[type="submit"] {
-  font-size: 4.5rem;
+.lowerMoney p {
+  text-align: center;
+  line-height: 0.9;
+  font-size: 12rem;
+  font-family: "Nanum Pen Script", cursive;
 }
 
-#timer {
-  font-size: 20rem;
+input[type="submit"] {
+  font-size: 4.5rem;
 }
 
 .yes:hover, .no:hover {
@@ -313,7 +335,11 @@ input[type="submit"] {
   top: -3000px;
 }
 
-.displayOverflow {
+.displayOverflowHeader {
+  overflow: hidden;
+}
+
+.displayOverflowWelcome {
   overflow: hidden;
 }
 
@@ -380,6 +406,12 @@ i:hover {
 
 input[type="username"],
 input[type="text"],
+.numberBox {
+  margin-top: 10vh;
+}
+
+input[type="username"],
+input[type="text"],
 input[type="number"] {
   color: white;
   background: rgba(0, 0, 0, 0);
@@ -388,8 +420,19 @@ input[type="number"] {
   padding: 5px 0;
   width: 35%;
   min-width: 300px;
-  margin-top: 10vh;
   text-align: center;
+}
+
+.numberBox {
+  border: 2px solid rgba(0, 0, 0, 0);
+}
+
+.badInput {
+  border: 2px solid red;
+}
+
+.badInput:hover {
+  border: 2px solid red;
 }
 
 input[type="username"]:hover,
@@ -406,29 +449,17 @@ input[type="number"]:hover, input[type="number"]:focus {
 }
 
 input[type="submit"] {
+  background: rgba(0, 0, 0, 0);
+  padding: 12px 20px 8px 20px;
   margin-top: 10vh;
   border: none;
-  border: 2px solid #27ec4d;
   font-family: "Nanum Pen Script", cursive;
   color: #27ec4d;
   border-radius: 15px;
 }
 
-input[type="reset"] {
-  border: none;
-  color: #27ec4d;
-}
-
-input[type="submit"],
-input[type="reset"] {
-  background: rgba(0, 0, 0, 0);
-  padding: 12px 20px 8px 20px;
-  text-transform: uppercase;
-}
-
 input[type="submit"]:hover {
   color: white;
-  border: 2px solid white;
 }
 
 .placeholderText::-webkit-input-placeholder {
@@ -472,11 +503,6 @@ input[type="submit"]:hover {
   margin: 0;
 }
 
-.clock h2 {
-  font-size: 4rem;
-  margin-bottom: 0;
-}
-
 .dashboardSub {
   height: 100%;
   display: -webkit-box;
@@ -495,9 +521,10 @@ input[type="submit"]:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
 }
 
 .kanyeContainer {
@@ -511,22 +538,40 @@ input[type="submit"]:hover {
 }
 
 .quoteContainer {
-  padding-right: 15px;
+  padding-left: 30px;
   -webkit-box-flex: 1;
       -ms-flex: 1 0 calc(100% - 120px);
           flex: 1 0 calc(100% - 120px);
-  text-align: right;
+  text-align: left;
 }
 
 .quoteContainer p {
-  padding: 4% 4% 0 0;
+  display: inline-block;
+  padding: 20px;
+  font-size: 2rem;
+  border: 2px solid #27ec4d;
+  border-radius: 15px;
+  position: relative;
+}
+
+.quoteContainer p::before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 10px solid transparent;
+  border-right: 10px solid #27ec4d;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  bottom: 20%;
+  left: -21px;
 }
 
 img {
   display: block;
   width: 100%;
-  -webkit-transform: rotate(25deg);
-          transform: rotate(25deg);
+  -webkit-transform: rotate(6deg);
+          transform: rotate(6deg);
   -webkit-filter: drop-shadow(2px 2px 0 #27ec4d) drop-shadow(2px -2px 0 #27ec4d) drop-shadow(-2px -2px 0 #27ec4d) drop-shadow(-2px 2px 0 #27ec4d);
           filter: drop-shadow(2px 2px 0 #27ec4d) drop-shadow(2px -2px 0 #27ec4d) drop-shadow(-2px -2px 0 #27ec4d) drop-shadow(-2px 2px 0 #27ec4d);
 }
@@ -550,28 +595,58 @@ img {
 
 .money p {
   color: #27ec4d;
-  font-size: 6rem;
-  margin: 3vh 0;
-  text-align: center;
 }
 
 .lowerReset {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  padding: 6% 8% 0 8%;
 }
 
-.trophy ul {
+button,
+input[type="reset"] {
+  border: 2px solid #27ec4d;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0);
+  color: #27ec4d;
+  padding: 3%;
+}
+
+button span,
+input[type="reset"] span {
+  display: block;
+}
+
+button:hover,
+input[type="reset"]:hover {
+  background-color: #27ec4d;
+  color: black;
+}
+
+input[type="reset"] {
+  margin-left: 4%;
+  width: 46%;
+}
+
+.speedButton {
+  margin-right: 4%;
+  width: 46%;
+}
+
+.lowerTrophy {
+  padding: 3%;
+}
+
+.lowerTrophy ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  padding: 5%;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 .fa-trophy {
