@@ -66,10 +66,10 @@
 
   .quoteContainer {
     p {
-      font-size: 2rem;
-      line-height: 2rem;
+      font-size: 1.8rem;
+      line-height: 1.1;
       &::before {
-        top: 20%;
+        top: 25%;
       }
     }
   }
@@ -128,7 +128,7 @@
 
   @media screen and (max-width: 460px) {
     h2.timer {
-      font-size: 7rem;
+      font-size: 6.5rem;
     }
 
     .trophy,

@@ -514,10 +514,20 @@ input[type="submit"]:hover, input[type="submit"]:focus, input[type="submit"]:act
   color: #27ec4d;
 }
 
+.welcomeSub button {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+}
+
 .fa-long-arrow-alt-left {
+  color: white;
   text-align: left;
   font-size: 5rem;
   margin-top: 3vh;
+}
+
+.fa-long-arrow-alt-left:hover, .fa-long-arrow-alt-left:focus, .fa-long-arrow-alt-left:active {
+  color: #27ec4d;
 }
 
 .clock {
@@ -4062,11 +4072,11 @@ input[type="reset"] {
             justify-content: flex-end;
   }
   .quoteContainer p {
-    font-size: 2rem;
-    line-height: 2rem;
+    font-size: 1.8rem;
+    line-height: 1.1;
   }
   .quoteContainer p::before {
-    top: 20%;
+    top: 25%;
   }
   .clock p {
     font-size: 3rem;
@@ -4120,7 +4130,7 @@ input[type="reset"] {
 
 @media screen and (max-width: 760px) and (max-width: 460px) {
   h2.timer {
-    font-size: 7rem;
+    font-size: 6.5rem;
   }
   .trophy h3,
   .money h3,

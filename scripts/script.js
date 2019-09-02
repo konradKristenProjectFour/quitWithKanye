@@ -115,7 +115,7 @@ soberApp.retrieveSpeed = () => {
   if (!$("button.speedButton").hasClass("highSpeed")) {
     return 86400;
   } else {
-    return 5;
+    return 15;
   }
 };
 

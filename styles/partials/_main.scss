@@ -145,11 +145,20 @@ input[type="submit"] {
   }
 }
 
+.welcomeSub button {
+  background-color: rgba(0,0,0,0);
+  border: none;
+}
+
 .fa-long-arrow-alt-left {
-  
+  color: white;
   text-align: left;
   font-size: 5rem;
   margin-top: 3vh;
+
+  &:hover, &:focus, &:active {
+    color: $accent;
+  }
 
 }
 

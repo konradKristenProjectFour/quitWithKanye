@@ -41,12 +41,6 @@ class Stopwatch {
       if (Math.floor(time / 1000) % updateTime === 0) {
         //refreshes quote on timed interval
         soberApp.getQuotes();
-
-        // adds money on timed interval
-        // $(".lowerMoney").html(
-        //   `<p>$${Math.floor(time / updateTime / 1000) *
-        //     soberApp.retrieveSpend()}</p>`
-        // );
       }
     };
 
