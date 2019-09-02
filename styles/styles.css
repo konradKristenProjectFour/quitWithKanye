@@ -223,7 +223,7 @@ textarea {
 
 html {
   font-family: "Open Sans", sans-serif;
-  background: black;
+  background: white;
   color: white;
   text-align: center;
   font-size: 10px;
@@ -3983,6 +3983,10 @@ input[type="reset"] {
 @media screen and (max-width: 760px) {
   body {
     font-size: 1.8rem;
+    height: auto;
+  }
+  .dashboard {
+    height: auto;
   }
   h1,
   h2,
@@ -4029,7 +4033,7 @@ input[type="reset"] {
     font-size: 3rem;
   }
   .dashboardSub {
-    height: 100%;
+    height: auto;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
