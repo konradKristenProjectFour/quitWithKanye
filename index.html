@@ -22,62 +22,49 @@
     <header id="header">
         <h1 id="headerType">Ready to quit<span class="lineTwo">with Kanye?</span><span tabindex="1" class="yes" id="yes" role="button">y</span> / <a href="https://media2.giphy.com/media/CycIvRahkUp0Y/giphy.gif?cid=790b7611c69949b046cc33d83e51bcffcb69510c8b0536b9&rid=giphy.gif" class="no" id="no" role="button" tabindex="2">n</a>
         </h1>
-
-        <!-- I understand there may be some semantic issues with using spans to act as a button. However getting this to work seamlessly with the TypeIt plug-in has made it a bit difficult otherwise.
-
-        Here is what settled it for me: https://stackoverflow.com/questions/10510191/valid-to-use-a-anchor-tag-without-href-attribute/10510353 -->
-
     </header>
 
     <main>
         <form action="#" method="#" class="initialForm" name="initialForm">
             <section class="welcome removeSection" id="welcome">
                 <div class="welcomeSub wrapper">
-                    <!-- <p>Everyone has a bad habit they want to kick. Don’t beat yourself up about it. Decide to start and
-                        take it day by day.</p>  -->
-
 
                     <div class="textBoxes">
 
                         <h4>Select Your Vice</h4>
-
                         <fieldset>
-
                             <legend class="visuallyHidden">Select your vice.</legend>
 
                             <div class="radioBox junkFoodIcon">
                                 <input type="radio" name="vice" value="junk food" id="junkFood" checked="true"/>
-
                                 <label for="junkFood" class="toggleLabel foodLabel">
                                     <i class="fas fa-hamburger"></i><span class="visuallyHidden">Junk Food</span>
                                 </label>
-                            </div>
+                            </div><!-- /.radioBox-->
 
                             <div class="radioBox alcoholIcon">
                                 <input type="radio" name="vice" value="alcohol" id="alcohol" />
-
                                 <label for="alcohol" class="toggleLabel alcoholLabel animated hover">
                                     <i class="fas fa-glass-martini-alt"></i><span class="visuallyHidden">Alcohol</span>
                                 </label>
-                            </div>
+                            </div><!-- /.radioBox-->
 
                             <div class="radioBox drugsIcon">
                                 <input type="radio" name="vice" value="drugs" id="drugs" />
-
                                 <label for="drugs" class="toggleLabel drugLabel">
                                     <i class="fas fa-capsules"></i><span class="visuallyHidden">Drugs</span>
                                 </label>
-                            </div>
+                            </div><!-- /.radioBox-->
 
                             <div class="radioBox unhealthyRelationshipsIcon">
                                 <input type="radio" name="vice" value="unhealthy relationships"
                                     id="unhealthyRelationships" />
-
                                 <label for="unhealthyRelationships" class="toggleLabel unhealthyRelationshipsLabel">
                                     <i class="fas fa-heart-broken"></i><span class="visuallyHidden">Unhealthy
                                         Relationships</span>
                                 </label>
-                            </div>
+                            </div><!-- /.radioBox-->
+
                         </fieldset>
 
                         <!-- spend start-->
@@ -85,14 +72,15 @@
                             <label class="visuallyHidden" for="spend">Daily spend?</label>
                             <input class="placeholderText" type="number" name="spend" id="spend"
                                 placeholder="Daily spend?" min="1" max="1000">
-                        </div>
+                        </div><!-- /.numberBox-->
 
                     </div><!-- /.textBoxes-->
-                    <div class="submitBox">
 
+                    <div class="submitBox">
                         <input type="submit" id="toggle" value="Start" name="submit">
                         <label class="visuallyHidden" class="submitLabel" for="submit">Submit</label>
                     </div><!-- /.submitBox-->
+
                 </div><!-- /.welcomeSub wrapper -->
             </section> <!-- /.welcome -->
 
@@ -119,41 +107,40 @@
                         <div class="trophy">
                             <div class="upperTrophy">
                                 <h3>Achievements</h3>
-                            </div>
+                            </div><!-- /.upperTrophy -->
                             <div class="lowerTrophy">
                                 <ul class="trophyList">
                                 </ul>
-                            </div>
-                        </div><!-- /.trophyCase -->
+                            </div><!-- /.lowerTrophy -->
+                        </div><!-- /.trophy -->
+
                         <div class="money">
                             <div class="upperMoney">
                                 <h3>Money Saved</h3>
-                            </div>
+                            </div><!-- /.upperMoney -->
                             <div class="lowerMoney">
                                 <p>$0</p>
-                            </div>
+                            </div><!-- /.lowerMoney -->
                         </div><!-- /.money -->
+
                         <div class="reset">
                             <div class="upperReset">
                                 <h3>Settings</h3>
-                            </div>
-
+                            </div><!-- /.upperReset -->
                             <div class="lowerReset">
                                 <button type="button" class="speedButton">Turbo <span>Speed</span></button>
                                 <label class="visuallyHidden" for="reset">Reset</label>
                                 <input type="reset" id="reset" value="Reset&#13;&#10;Counter" name="reset">
-                            </div>
+                            </div><!-- /.lowerReset -->
                         </div><!-- /.reset -->
+
                     </div><!-- /.lowerDash -->
+
                 </div><!-- /.dashboardSub wrapper-->
             </section><!-- /.dashboard -->
         </form><!-- /.initialForm -->
 
     </main>
-
-    <footer class="wrapper">
-        <!-- <p>Designed and developed by Konrad Droeske & Kristen Zemlak | 2019</p> -->
-    </footer><!-- /.wrapper -->
 
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>

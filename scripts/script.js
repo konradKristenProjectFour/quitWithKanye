@@ -20,7 +20,6 @@ soberApp.clickYes = function() {
       event.type === "click" ||
       (event.type === "keydown" && (event.which === 13 || event.which === 32))
     ) {
-      //submit(); submit your form
       soberApp.yesAction();
     }
   });
