@@ -109,7 +109,6 @@ input[type="text"] {
 input[type="number"] {
   &:hover,
   &:focus {
-    // color: $accent;
     border-bottom: 2px solid $accent;
   }
 }
@@ -123,22 +122,19 @@ input[type="submit"] {
   padding: 12px 20px 8px 20px;
   margin-top: 10vh;
   border: none;
-  // border: 2px solid $accent;
   font-family: $specialFont;
   color: $accent;
   border-radius: 15px;
-
-  &:hover, &:focus, &:active {
+  &:hover, 
+  &:focus, 
+  &:active {
     color: $primary;
-    // border: 2px solid $primary;
-
   }
 }
 
 .placeholderText::placeholder {
   opacity: 0.7;
   text-align: center;
-
   &:hover,
   &:focus {
     color: $accent;
@@ -176,7 +172,6 @@ input[type="submit"] {
   padding-left: 30px;
   flex: 1 0 calc(100% - 120px);
   text-align: left;
-
   p {
     display: inline-block;
     padding: 20px;
@@ -184,16 +179,6 @@ input[type="submit"] {
     border: 2px solid $accent;
     border-radius: 15px;
     position: relative;
-
-    // &::before {
-    //   content: "";
-    //   position: absolute;
-    //   left: 0;
-    //   height: 100px;
-    //   width: 100px;
-    //   background-color: red;
-    // }
-
     &::before {
       content: "";
       width: 0px;
@@ -206,22 +191,9 @@ input[type="submit"] {
       bottom: 20%;
       left: -21px;
     }
-
-    // &::after {
-    //   content: "";
-    //   width: 0px;
-    //   height: 0px;
-    //   position: absolute;
-    //   border-left: 10px solid transparent;
-    //   border-right: 10px solid $accent;
-    //   border-top: 10px solid transparent;
-    //   border-bottom: 10px solid transparent;
-    //   left: -17px;
-    // }
   }
 }
 
-// SPEECH BUBBLE TEST END
 
 img {
   display: block;

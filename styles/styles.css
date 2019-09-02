@@ -3980,7 +3980,7 @@ input[type="reset"] {
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 760px) {
   body {
     font-size: 1.8rem;
   }
@@ -4003,7 +4003,6 @@ input[type="reset"] {
     font-size: 7rem;
   }
   input[type="submit"],
-  input[type="reset"],
   .trophy,
   .money,
   .reset {
@@ -4054,6 +4053,9 @@ input[type="reset"] {
     font-size: 2rem;
     line-height: 2rem;
   }
+  .quoteContainer p::before {
+    bottom: 50%;
+  }
   .lowerDash {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -4074,6 +4076,6 @@ input[type="reset"] {
   .reset h3,
   .reset h4,
   .reset p {
-    font-size: 2rem;
+    font-size: 4rem;
   }
 }
