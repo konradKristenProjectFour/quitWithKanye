@@ -4000,11 +4000,12 @@ input[type="reset"] {
   }
   h2,
   h3 {
-    margin: 2vh;
+    margin: 5vh;
     font-size: 3rem;
   }
   #timer {
-    font-size: 7rem;
+    font-size: 6rem;
+    padding: 5vh 0;
   }
   input[type="submit"],
   .trophy,
@@ -4058,7 +4059,12 @@ input[type="reset"] {
     line-height: 2rem;
   }
   .quoteContainer p::before {
-    bottom: 50%;
+    bottom: 60%;
+  }
+  .clock p {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    padding-bottom: 5vh;
   }
   .lowerDash {
     -webkit-box-orient: vertical;
@@ -4073,13 +4079,16 @@ input[type="reset"] {
   }
   .trophy h3,
   .trophy h4,
-  .trophy p,
   .money h3,
   .money h4,
-  .money p,
   .reset h3,
-  .reset h4,
+  .reset h4 {
+    font-size: 3rem;
+  }
+  .trophy p,
+  .money p,
   .reset p {
-    font-size: 4rem;
+    font-size: 5rem;
+    padding-bottom: 5vh;
   }
 }
