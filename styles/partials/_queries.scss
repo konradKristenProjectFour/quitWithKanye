@@ -1,104 +1,151 @@
 @media screen and (max-width: 760px) {
+  body {
+    font-size: 1.8rem;
+    height: auto;
+  }
 
-    body {
-        font-size: 1.8rem;
-        height: auto;
+  .dashboard {
+    height: auto;
+  }
+
+  header,
+  .welcome,
+  .dashboard {
+    padding: 5vh 0 0 0;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-size: 6rem;
+    span {
+      display: inline;
+    }
+  }
+
+  h2.timer {
+    font-size: 10rem;
+    margin: 5vh 0;
+    padding: 0;
+  }
+
+  input[type="submit"],
+  .trophy,
+  .money,
+  .reset {
+    width: 100%;
+  }
+
+  input[type="submit"] {
+    font-size: 4rem;
+    margin: 10vh 0;
+  }
+
+  .placeholderText::placeholder {
+    opacity: 0.7;
+  }
+
+  .introQuote {
+    margin: 2vh;
+    font-size: 3rem;
+  }
+
+  .dashboardSub {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  // QUOTES SECTION /////////////////
+
+  .quotes {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .quoteContainer {
+    p {
+      font-size: 2rem;
+      line-height: 2rem;
+      &::before {
+        top: 20%;
+      }
+    }
+  }
+
+  // CLOCK /////////////////
+
+  .clock p {
+    font-size: 3rem;
+    line-height: 2.5rem;
+    padding-bottom: 5vh;
+  }
+
+  // BELOW CLOCK /////////////////
+
+  .lowerDash {
+    flex-direction: column;
+  }
+
+  .trophy,
+  .money,
+  .reset {
+    margin: 2vh 0;
+    h3,
+    h4 {
+      font-size: 2.5rem;
+    }
+    p {
+      padding-bottom: 0;
+    }
+  }
+
+  .trophy .lowerTrophy {
+    padding-bottom: 3vh;
+  }
+
+  .lowerMoney p {
+    padding-bottom: 0;
+  }
+
+  .lowerReset {
+    padding: 2% 5% 5% 5%;
+  }
+
+  .speedButton,
+  input[type="reset"] {
+    width: calc(50% - 2.5%);
+  }
+
+  .speedButton {
+    margin-right: 2.5%;
+  }
+
+  input[type="reset"] {
+    margin-left: 2.5%;
+  }
+
+  @media screen and (max-width: 460px) {
+    h2.timer {
+      font-size: 7rem;
     }
 
-    .dashboard {
-        height: auto;
+    .trophy,
+    .money,
+    .reset {
+      h3 {  
+          font-size: 2.2rem;
+
+      } 
     }
 
-    h1,
-    h2, 
-    h3 {
-        font-size: 6rem; 
-        span {
-            display: inline;
-        }
-    }
-
-    h2, 
-    h3 {
-        margin: 5vh; 
-        font-size: 3rem;
-    }
-
-    #timer {
-    font-size: 6rem; 
-    padding: 5vh 0; 
-    }
-
-    input[type="submit"], 
-    .trophy, 
-    .money, 
-    .reset  {
-        width: 100%;
-    }
-
-    input[type="submit"] {
-        font-size: 4rem; 
-        margin: 10vh 0;
-    }
-
-    .placeholderText::placeholder {
-        opacity: 0.7;
-    }
-
-    .introQuote {
-        margin: 2vh; 
-        font-size: 3rem;
-    }
-
-    .dashboardSub {
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
-    // QUOTES SECTION /////////////////
-
-    .quotes {
-        display: flex;
-        justify-content: flex-end;
+    .kanyeButton {
+      width: 112px;
     }
 
     .quoteContainer {
-        p {
-            font-size: 2rem;
-            line-height: 2rem;
-            &::before {
-                bottom: 60%;
-            }
-        }
+      padding-left: 14px;
     }
-
-     // CLOCK /////////////////
-
-    .clock p {
-        font-size: 2.5rem; 
-        line-height: 2.5rem;
-        padding-bottom: 5vh; 
-    }
-
-    // BELOW CLOCK /////////////////
-
-    .lowerDash {
-        flex-direction: column;
-    }
-
-    .trophy, 
-    .money, 
-    .reset {
-        margin: 2vh 0; 
-        h3, 
-        h4 {
-            font-size: 3rem; 
-        }
-        p {
-            font-size: 5rem; 
-            padding-bottom: 5vh; 
-        }
-    }
+  }
 }

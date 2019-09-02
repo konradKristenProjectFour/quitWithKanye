@@ -24,10 +24,16 @@ header,
 
 .welcome {
   text-align: center;
+  // position: relative;
   p {
     margin-bottom: 10vh;
   }
 }
+
+// .welcomeSub {
+//   display: flex;
+//   flex-direction: column;
+// }
 
 fieldset {
   width: 100%;
@@ -137,6 +143,14 @@ input[type="submit"] {
   &:focus {
     color: $accent;
   }
+}
+
+.fa-long-arrow-alt-left {
+  
+  text-align: left;
+  font-size: 5rem;
+  margin-top: 3vh;
+
 }
 
 // MAIN PAGE
