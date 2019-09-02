@@ -2,6 +2,11 @@
 
     body {
         font-size: 1.8rem;
+        height: auto;
+    }
+
+    .dashboard {
+        height: auto;
     }
 
     h1,
@@ -45,7 +50,7 @@
     }
 
     .dashboardSub {
-        height: 100%;
+        height: auto;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
