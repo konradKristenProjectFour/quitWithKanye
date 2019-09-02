@@ -20,12 +20,13 @@
 
     h2, 
     h3 {
-        margin: 2vh; 
+        margin: 5vh; 
         font-size: 3rem;
     }
 
     #timer {
-    font-size: 7rem; 
+    font-size: 6rem; 
+    padding: 5vh 0; 
     }
 
     input[type="submit"], 
@@ -68,9 +69,17 @@
             font-size: 2rem;
             line-height: 2rem;
             &::before {
-                bottom: 50%;
+                bottom: 60%;
             }
         }
+    }
+
+     // CLOCK /////////////////
+
+    .clock p {
+        font-size: 2.5rem; 
+        line-height: 2.5rem;
+        padding-bottom: 5vh; 
     }
 
     // BELOW CLOCK /////////////////
@@ -84,9 +93,12 @@
     .reset {
         margin: 2vh 0; 
         h3, 
-        h4, 
+        h4 {
+            font-size: 3rem; 
+        }
         p {
-            font-size: 4rem; 
+            font-size: 5rem; 
+            padding-bottom: 5vh; 
         }
     }
 }
