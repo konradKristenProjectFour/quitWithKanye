@@ -474,7 +474,7 @@ input[type="number"]:hover, input[type="number"]:focus {
 input[type="submit"] {
   background: rgba(0, 0, 0, 0);
   padding: 12px 20px 8px 20px;
-  margin-top: 10vh;
+  margin: 10vh 0;
   border: none;
   font-family: "Nanum Pen Script", cursive;
   color: #27ec4d;
@@ -4044,7 +4044,6 @@ input[type="reset"] {
   }
   input[type="submit"] {
     font-size: 4rem;
-    margin: 10vh 0;
   }
   .placeholderText::-webkit-input-placeholder {
     opacity: 0.7;
