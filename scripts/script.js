@@ -29,20 +29,26 @@ soberApp.yesAction = function() {
   $("header").addClass("animated slideOutLeft");
   $("body").addClass("displayOverflowHeader");
 
-  let elementWelcome = document.getElementById("header");
+  let elementHeader = document.getElementById("header");
 
-  elementWelcome.addEventListener("animationend", function() {
+  elementHeader.addEventListener("animationend", function _listenerOne() {
     $("header").removeClass("animated slideOutLeft");
     $("header").addClass("removeSection");
     $(".welcome").addClass("animated slideInRight");
     $(".welcome").removeClass("removeSection");
 
-    let elementWelcome = document.getElementById("welcome");
+    let elementWelcomeHeader = document.getElementById("welcome");
 
-    elementWelcome.addEventListener("animationend", function() {
-      $("body").removeClass("displayOverflowHeader");
-      $(".welcome").removeClass("animated slideInRight");
-    });
+    elementWelcomeHeader.addEventListener(
+      "animationend",
+      function _listenerTwo() {
+        $("body").removeClass("displayOverflowHeader");
+        $(".welcome").removeClass("animated slideInRight");
+
+        elementWelcomeHeader.removeEventListener("animationend", _listenerTwo);
+      }
+    );
+    elementHeader.removeEventListener("animationend", _listenerOne);
   });
 };
 
@@ -60,8 +66,6 @@ soberApp.formSubmit = () => {
     let vice = soberApp.retrieveVice();
     let spend = soberApp.retrieveSpend();
 
-    console.log(vice);
-
     if (spend < 1) {
       $(".numberBox").addClass("badInput");
     } else {
@@ -72,19 +76,32 @@ soberApp.formSubmit = () => {
 
       let elementWelcome = document.getElementById("welcome");
 
-      elementWelcome.addEventListener("animationend", function() {
-        $(".welcome").removeClass("animated slideOutLeft");
-        $(".welcome").addClass("removeSection");
-        $(".dashboard").addClass("animated slideInRight");
-        $(".dashboard").removeClass("removeSection");
+      elementWelcome.addEventListener(
+        "animationend",
+        function _listenerThree() {
+          $(".welcome").removeClass("animated slideOutLeft");
+          $(".welcome").addClass("removeSection");
+          $(".dashboard").addClass("animated slideInRight");
+          $(".dashboard").removeClass("removeSection");
 
-        let elementDashboard = document.getElementById("dashboard");
+          let elementDashboard = document.getElementById("dashboard");
 
-        elementDashboard.addEventListener("animationend", function() {
-          $("body").removeClass("displayOverflowWelcome");
-          $(".dashboard").removeClass("animated slideInRight");
-        });
-      });
+          elementDashboard.addEventListener(
+            "animationend",
+            function _listenerFour() {
+              $("body").removeClass("displayOverflowWelcome");
+              $(".dashboard").removeClass("animated slideInRight");
+
+              elementDashboard.removeEventListener(
+                "animationend",
+                _listenerFour
+              );
+            }
+          );
+
+          elementWelcome.removeEventListener("animationend", _listenerThree);
+        }
+      );
     }
   });
 };
@@ -103,10 +120,8 @@ soberApp.toggleSpeed = () => {
   $("button.speedButton").on("click", function() {
     if (!$("button.speedButton").hasClass("highSpeed") === true) {
       $("button.speedButton").addClass("highSpeed");
-      console.log("High Speed");
     } else {
       $("button.speedButton").removeClass("highSpeed");
-      console.log("Normal Speed");
     }
   });
 };
@@ -115,7 +130,7 @@ soberApp.retrieveSpeed = () => {
   if (!$("button.speedButton").hasClass("highSpeed")) {
     return 86400;
   } else {
-    return 15;
+    return 10;
   }
 };
 
@@ -166,19 +181,19 @@ soberApp.shakeKanye = function() {
 
   let element = document.getElementById("kanyeButton");
 
-  element.addEventListener("animationend", function() {
+  element.addEventListener("animationend", function _listenerFive() {
     $(".kanyeButton").removeClass("animated shake");
+    
+    element.removeEventListener("animationend", _listenerFive);
   });
 };
 
 soberApp.welcomeBack = () => {
-
   $(".fa-long-arrow-alt-left").on("click", function() {
     $(".welcome").addClass("removeSection");
     $("header").removeClass("removeSection");
   });
-  
-}
+};
 
 //reset button rests all the form information and brings you back to the Welcome Page
 soberApp.formReset = () => {

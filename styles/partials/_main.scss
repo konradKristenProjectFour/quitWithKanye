@@ -30,11 +30,6 @@ header,
   }
 }
 
-// .welcomeSub {
-//   display: flex;
-//   flex-direction: column;
-// }
-
 fieldset {
   width: 100%;
   max-width: 900px;
@@ -81,10 +76,10 @@ input[type="text"],
 input[type="username"],
 input[type="text"],
 input[type="number"] {
-  color: white;
+  color: $primary;
   background: rgba(0, 0, 0, 0);
   border: none;
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid $primary;
   padding: 5px 0;
   width: 35%;
   min-width: 300px;
@@ -151,12 +146,12 @@ input[type="submit"] {
 }
 
 .fa-long-arrow-alt-left {
-  color: white;
+  color: $primary;
   text-align: left;
   font-size: 5rem;
   margin-top: 3vh;
 
-  &:hover, &:focus, &:active {
+  &:hover, &:focus {
     color: $accent;
   }
 

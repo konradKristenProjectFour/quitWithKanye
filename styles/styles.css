@@ -526,7 +526,7 @@ input[type="submit"]:hover, input[type="submit"]:focus, input[type="submit"]:act
   margin-top: 3vh;
 }
 
-.fa-long-arrow-alt-left:hover, .fa-long-arrow-alt-left:focus, .fa-long-arrow-alt-left:active {
+.fa-long-arrow-alt-left:hover, .fa-long-arrow-alt-left:focus {
   color: #27ec4d;
 }
 
@@ -4001,9 +4001,6 @@ input[type="reset"] {
     font-size: 1.8rem;
     height: auto;
   }
-  .dashboard {
-    height: auto;
-  }
   header,
   .welcome,
   .dashboard {
@@ -4046,9 +4043,8 @@ input[type="reset"] {
   .placeholderText::placeholder {
     opacity: 0.7;
   }
-  .introQuote {
-    margin: 2vh;
-    font-size: 3rem;
+  .dashboard {
+    height: auto;
   }
   .dashboardSub {
     height: auto;

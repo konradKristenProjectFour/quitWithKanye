@@ -4,10 +4,6 @@
     height: auto;
   }
 
-  .dashboard {
-    height: auto;
-  }
-
   header,
   .welcome,
   .dashboard {
@@ -45,9 +41,8 @@
     opacity: 0.7;
   }
 
-  .introQuote {
-    margin: 2vh;
-    font-size: 3rem;
+  .dashboard {
+    height: auto;
   }
 
   .dashboardSub {
@@ -134,10 +129,9 @@
     .trophy,
     .money,
     .reset {
-      h3 {  
-          font-size: 2.2rem;
-
-      } 
+      h3 {
+        font-size: 2.2rem;
+      }
     }
 
     .kanyeButton {
