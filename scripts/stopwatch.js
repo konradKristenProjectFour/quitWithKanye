@@ -100,17 +100,17 @@ class Stopwatch {
 
     this.trophyCounter = function() {
       trophies = trophies + 1;
-      console.log(trophies);
-      console.log(time);
 
       let trophySound = new Audio("./audio/coin.wav");
       trophySound.play();
 
       if (trophies < 4) {
-        $(".trophyList").append(`<li><i class="fas fa-trophy"></i></li>`);
+        $(".trophyList").append(
+          `<li><i class="fas fa-trophy" aria-hidden="true"></i></li>`
+        );
       } else {
         $(".trophyList").html(
-          `<li><i class="fas fa-trophy"></i></li><p>x ${trophies}</p>`
+          `<li><i class="fas fa-trophy" aria-hidden="true"></i></li><p>x ${trophies}</p>`
         );
       }
 

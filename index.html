@@ -8,7 +8,7 @@
 
     <script src="https://kit.fontawesome.com/ddfa5da3a1.js"></script>
 
-    <link rel="icon" type="image/png" sizes="96x96" href="/images/kanyeFavicon.png">
+    <link rel="shortcut icon" type="image/png" href="/images/kanyeFavicon.png">
 
     <link href="https://fonts.googleapis.com/css?family=Nanum+Pen+Script%7COpen+Sans:300,400,700&display=swap"
         rel="stylesheet">
@@ -20,7 +20,10 @@
 
 <body>
     <header id="header">
-        <h1 id="headerType">Ready to quit<span class="lineTwo">with Kanye?</span><span tabindex="1" class="yes" id="yes" role="button">y</span> / <a href="https://media2.giphy.com/media/CycIvRahkUp0Y/giphy.gif?cid=790b7611c69949b046cc33d83e51bcffcb69510c8b0536b9&rid=giphy.gif" class="no" id="no" role="button" tabindex="2">n</a>
+        <h1 id="headerType">Ready to quit<span class="lineTwo">with Kanye?</span><span tabindex="1" class="yes" id="yes"
+                role="button">y</span> / <a
+                href="https://media2.giphy.com/media/CycIvRahkUp0Y/giphy.gif?cid=790b7611c69949b046cc33d83e51bcffcb69510c8b0536b9&rid=giphy.gif"
+                class="no" id="no" role="button" tabindex="2">n</a>
         </h1>
     </header>
 
@@ -36,23 +39,23 @@
                             <legend class="visuallyHidden">Select your vice.</legend>
 
                             <div class="radioBox junkFoodIcon">
-                                <input type="radio" name="vice" value="junk food" id="junkFood" checked="true"/>
+                                <input type="radio" name="vice" value="junk food" id="junkFood" checked="true" />
                                 <label for="junkFood" class="toggleLabel foodLabel">
-                                    <i class="fas fa-hamburger"></i><span class="visuallyHidden">Junk Food</span>
+                                    <i class="fas fa-hamburger" aria-hidden="true"></i><span class="visuallyHidden">Junk Food</span>
                                 </label>
                             </div><!-- /.radioBox-->
 
                             <div class="radioBox alcoholIcon">
                                 <input type="radio" name="vice" value="alcohol" id="alcohol" />
                                 <label for="alcohol" class="toggleLabel alcoholLabel animated hover">
-                                    <i class="fas fa-glass-martini-alt"></i><span class="visuallyHidden">Alcohol</span>
+                                    <i class="fas fa-glass-martini-alt" aria-hidden="true"></i><span class="visuallyHidden">Alcohol</span>
                                 </label>
                             </div><!-- /.radioBox-->
 
                             <div class="radioBox drugsIcon">
                                 <input type="radio" name="vice" value="drugs" id="drugs" />
                                 <label for="drugs" class="toggleLabel drugLabel">
-                                    <i class="fas fa-capsules"></i><span class="visuallyHidden">Drugs</span>
+                                    <i class="fas fa-capsules" aria-hidden="true"></i><span class="visuallyHidden">Drugs</span>
                                 </label>
                             </div><!-- /.radioBox-->
 
@@ -60,7 +63,7 @@
                                 <input type="radio" name="vice" value="unhealthy relationships"
                                     id="unhealthyRelationships" />
                                 <label for="unhealthyRelationships" class="toggleLabel unhealthyRelationshipsLabel">
-                                    <i class="fas fa-heart-broken"></i><span class="visuallyHidden">Unhealthy
+                                    <i class="fas fa-heart-broken" aria-hidden="true"></i><span class="visuallyHidden">Unhealthy
                                         Relationships</span>
                                 </label>
                             </div><!-- /.radioBox-->
@@ -81,7 +84,7 @@
                         <label class="visuallyHidden" class="submitLabel" for="submit">Submit</label>
                     </div><!-- /.submitBox-->
 
-                    <button type="button"><i class="fas fa-long-arrow-alt-left"></i></button>
+                    <button type="button"><i class="fas fa-long-arrow-alt-left" aria-hidden="true"></i></button>
 
                 </div><!-- /.welcomeSub wrapper -->
             </section> <!-- /.welcome -->
@@ -89,7 +92,7 @@
             <section class="dashboard removeSection" id="dashboard">
                 <div class="dashboardSub wrapper">
 
-                    <div class="quotes">
+                    <section class="quotes">
                         <div class="quoteContainer">
                             <!-- DYNAMIC CONTENT -->
                         </div><!-- /.quoteContainer -->
@@ -98,12 +101,12 @@
                                 <img class="kanyeImg" src="images/kanyeSmiling.png" alt="Picture of Kanye smiling.">
                             </div><!-- /.kanyeButton -->
                         </div><!-- /.kanyeContainer -->
-                    </div><!-- /.quotes -->
+                    </section><!-- /.quotes -->
 
-                    <div class="clock">
+                    <section class="clock">
                         <h2 class="timer" id="timer">00 : 00 : 00 </h2>
                         <p>since you quit <span class="viceSelection"></span> with Kanye</p>
-                    </div><!-- /.clock -->
+                    </section><!-- /.clock -->
 
                     <div class="lowerDash">
                         <div class="trophy">
@@ -152,6 +155,7 @@
     <script src="node_modules/typeit/dist/typeit.min.js"></script>
 
     <script src="scripts/script.js"></script>
+
 </body>
 
 </html>
