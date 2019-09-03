@@ -115,7 +115,7 @@ soberApp.retrieveSpeed = () => {
   if (!$("button.speedButton").hasClass("highSpeed")) {
     return 86400;
   } else {
-    return 5;
+    return 15;
   }
 };
 
@@ -171,6 +171,15 @@ soberApp.shakeKanye = function() {
   });
 };
 
+soberApp.welcomeBack = () => {
+
+  $(".fa-long-arrow-alt-left").on("click", function() {
+    $(".welcome").addClass("removeSection");
+    $("header").removeClass("removeSection");
+  });
+  
+}
+
 //reset button rests all the form information and brings you back to the Welcome Page
 soberApp.formReset = () => {
   $("form").on("reset", function(event) {
@@ -189,6 +198,7 @@ soberApp.formReset = () => {
 soberApp.init = () => {
   headerTypeInstance.go();
   soberApp.clickYes();
+  soberApp.welcomeBack();
   soberApp.getQuotes();
   soberApp.insertQuote();
   soberApp.clickKanye();

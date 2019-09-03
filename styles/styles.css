@@ -514,6 +514,22 @@ input[type="submit"]:hover, input[type="submit"]:focus, input[type="submit"]:act
   color: #27ec4d;
 }
 
+.welcomeSub button {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+}
+
+.fa-long-arrow-alt-left {
+  color: white;
+  text-align: left;
+  font-size: 5rem;
+  margin-top: 3vh;
+}
+
+.fa-long-arrow-alt-left:hover, .fa-long-arrow-alt-left:focus, .fa-long-arrow-alt-left:active {
+  color: #27ec4d;
+}
+
 .clock {
   border: none;
   margin: 0;
@@ -3988,6 +4004,11 @@ input[type="reset"] {
   .dashboard {
     height: auto;
   }
+  header,
+  .welcome,
+  .dashboard {
+    padding: 5vh 0 0 0;
+  }
   h1,
   h2,
   h3 {
@@ -3998,14 +4019,10 @@ input[type="reset"] {
   h3 span {
     display: inline;
   }
-  h2,
-  h3 {
-    margin: 5vh;
-    font-size: 3rem;
-  }
-  #timer {
-    font-size: 6rem;
-    padding: 5vh 0;
+  h2.timer {
+    font-size: 10rem;
+    margin: 5vh 0;
+    padding: 0;
   }
   input[type="submit"],
   .trophy,
@@ -4055,14 +4072,14 @@ input[type="reset"] {
             justify-content: flex-end;
   }
   .quoteContainer p {
-    font-size: 2rem;
-    line-height: 2rem;
+    font-size: 1.8rem;
+    line-height: 1.1;
   }
   .quoteContainer p::before {
-    bottom: 60%;
+    top: 25%;
   }
   .clock p {
-    font-size: 2.5rem;
+    font-size: 3rem;
     line-height: 2.5rem;
     padding-bottom: 5vh;
   }
@@ -4083,12 +4100,47 @@ input[type="reset"] {
   .money h4,
   .reset h3,
   .reset h4 {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
   .trophy p,
   .money p,
   .reset p {
-    font-size: 5rem;
-    padding-bottom: 5vh;
+    padding-bottom: 0;
+  }
+  .trophy .lowerTrophy {
+    padding-bottom: 3vh;
+  }
+  .lowerMoney p {
+    padding-bottom: 0;
+  }
+  .lowerReset {
+    padding: 2% 5% 5% 5%;
+  }
+  .speedButton,
+  input[type="reset"] {
+    width: calc(50% - 2.5%);
+  }
+  .speedButton {
+    margin-right: 2.5%;
+  }
+  input[type="reset"] {
+    margin-left: 2.5%;
+  }
+}
+
+@media screen and (max-width: 760px) and (max-width: 460px) {
+  h2.timer {
+    font-size: 6.5rem;
+  }
+  .trophy h3,
+  .money h3,
+  .reset h3 {
+    font-size: 2.2rem;
+  }
+  .kanyeButton {
+    width: 112px;
+  }
+  .quoteContainer {
+    padding-left: 14px;
   }
 }

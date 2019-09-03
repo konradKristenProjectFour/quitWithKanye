@@ -33,19 +33,14 @@ class Stopwatch {
       const trophyLimit = 3;
 
       // add trophy to trophyList (max trophies appear depending on numberOfTrophies)
-      if (Math.floor(time / 1000) % updateTime === 0) {
+      if (Math.floor(time / 1000) % updateTime === 0 && time > 0) {
+        // time > 0 prevents trophy sound from firing
         this.trophyCounter();
       }
 
       if (Math.floor(time / 1000) % updateTime === 0) {
         //refreshes quote on timed interval
         soberApp.getQuotes();
-
-        // adds money on timed interval
-        // $(".lowerMoney").html(
-        //   `<p>$${Math.floor(time / updateTime / 1000) *
-        //     soberApp.retrieveSpend()}</p>`
-        // );
       }
     };
 
@@ -106,6 +101,10 @@ class Stopwatch {
     this.trophyCounter = function() {
       trophies = trophies + 1;
       console.log(trophies);
+      console.log(time);
+
+      let trophySound = new Audio("./audio/coin.wav");
+      trophySound.play();
 
       if (trophies < 4) {
         $(".trophyList").append(`<li><i class="fas fa-trophy"></i></li>`);
