@@ -19,6 +19,10 @@
     }
   }
 
+  .fas {
+    font-size: 4rem;
+  }
+
   h2.timer {
     font-size: 10rem;
     margin: 5vh 0;
@@ -122,6 +126,11 @@
   }
 
   @media screen and (max-width: 460px) {
+    
+    h1 {
+        font-size: 5rem;
+    }
+    
     h2.timer {
       font-size: 6.5rem;
     }
@@ -132,6 +141,10 @@
       h3 {
         font-size: 2.2rem;
       }
+    }
+
+    h4 {
+        font-size: 4rem;
     }
 
     .kanyeButton {
