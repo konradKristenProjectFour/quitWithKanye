@@ -124,7 +124,7 @@ input[type="number"] {
 input[type="submit"] {
   background: $secondary;
   padding: 12px 20px 8px 20px;
-  margin-top: 10vh;
+  margin: 10vh 0;
   border: none;
   font-family: $specialFont;
   color: $accent;
@@ -253,8 +253,8 @@ img {
   padding: 4% 8% 6% 8%;
 }
 
-Button.speedButton,
-input[type="reset"] {
+button.speedButton,
+button.resetButton {
   white-space: normal;
   border: 2px solid $accent;
   border-radius: 15px;
@@ -288,7 +288,7 @@ button.highSpeed {
     color: black;
 }
 
-input[type="reset"] {
+button.resetButton {
   margin-left: 4%;
   width: 46%;
 }

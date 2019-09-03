@@ -38,7 +38,6 @@
 
   input[type="submit"] {
     font-size: 4rem;
-    margin: 10vh 0;
   }
 
   .placeholderText::placeholder {
@@ -113,7 +112,7 @@
   }
 
   .speedButton,
-  input[type="reset"] {
+  button.resetButton {
     width: calc(50% - 2.5%);
   }
 
@@ -121,7 +120,7 @@
     margin-right: 2.5%;
   }
 
-  input[type="reset"] {
+  button.resetButton {
     margin-left: 2.5%;
   }
 

@@ -474,7 +474,7 @@ input[type="number"]:hover, input[type="number"]:focus {
 input[type="submit"] {
   background: rgba(0, 0, 0, 0);
   padding: 12px 20px 8px 20px;
-  margin-top: 10vh;
+  margin: 10vh 0;
   border: none;
   font-family: "Nanum Pen Script", cursive;
   color: #27ec4d;
@@ -646,8 +646,8 @@ img {
   padding: 4% 8% 6% 8%;
 }
 
-Button.speedButton,
-input[type="reset"] {
+button.speedButton,
+button.resetButton {
   white-space: normal;
   border: 2px solid #27ec4d;
   border-radius: 15px;
@@ -657,15 +657,15 @@ input[type="reset"] {
   text-align: center;
 }
 
-Button.speedButton span,
-input[type="reset"] span {
+button.speedButton span,
+button.resetButton span {
   display: block;
 }
 
-Button.speedButton:hover, Button.speedButton:focus, Button.speedButton:active,
-input[type="reset"]:hover,
-input[type="reset"]:focus,
-input[type="reset"]:active {
+button.speedButton:hover, button.speedButton:focus, button.speedButton:active,
+button.resetButton:hover,
+button.resetButton:focus,
+button.resetButton:active {
   background-color: #27ec4d;
   color: black;
 }
@@ -685,7 +685,7 @@ button.highSpeed {
   color: black;
 }
 
-input[type="reset"] {
+button.resetButton {
   margin-left: 4%;
   width: 46%;
 }
@@ -4044,7 +4044,6 @@ input[type="reset"] {
   }
   input[type="submit"] {
     font-size: 4rem;
-    margin: 10vh 0;
   }
   .placeholderText::-webkit-input-placeholder {
     opacity: 0.7;
@@ -4128,13 +4127,13 @@ input[type="reset"] {
     padding: 2% 5% 5% 5%;
   }
   .speedButton,
-  input[type="reset"] {
+  button.resetButton {
     width: calc(50% - 2.5%);
   }
   .speedButton {
     margin-right: 2.5%;
   }
-  input[type="reset"] {
+  button.resetButton {
     margin-left: 2.5%;
   }
 }
