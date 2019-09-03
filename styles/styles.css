@@ -655,6 +655,7 @@ input[type="reset"] {
   background-color: rgba(0, 0, 0, 0);
   color: #27ec4d;
   padding: 3%;
+  text-align: center;
 }
 
 Button.speedButton span,
