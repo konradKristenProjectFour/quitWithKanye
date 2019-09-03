@@ -519,6 +519,10 @@ input[type="submit"]:hover, input[type="submit"]:focus, input[type="submit"]:act
   border: none;
 }
 
+.welcomeSub button:hover, .welcomeSub button:focus {
+  color: #27ec4d;
+}
+
 .fa-long-arrow-alt-left {
   color: white;
   text-align: left;
