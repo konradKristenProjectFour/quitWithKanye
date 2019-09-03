@@ -67,6 +67,11 @@ i:hover {
   align-items: center;
 }
 
+.radioContainer {
+  display: flex;
+  width: 100%;
+}
+
 input[type="username"],
 input[type="text"],
 .numberBox {
@@ -251,6 +256,7 @@ img {
 
 Button.speedButton,
 input[type="reset"] {
+  white-space: normal;
   border: 2px solid $accent;
   border-radius: 15px;
   background-color: rgba(0, 0, 0, 0);

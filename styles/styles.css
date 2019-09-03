@@ -230,8 +230,8 @@ html {
 }
 
 body {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("../images/background.png");
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/background.png");
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("../images/background-min.png");
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/background-min.png");
   margin: 0 auto;
   color: white;
   font-size: 2rem;
@@ -418,6 +418,13 @@ i:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.radioContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
 }
 
 input[type="username"],
@@ -642,6 +649,7 @@ img {
 
 Button.speedButton,
 input[type="reset"] {
+  white-space: normal;
   border: 2px solid #27ec4d;
   border-radius: 15px;
   background-color: rgba(0, 0, 0, 0);
