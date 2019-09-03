@@ -183,15 +183,22 @@ soberApp.shakeKanye = function() {
 
   element.addEventListener("animationend", function _listenerFive() {
     $(".kanyeButton").removeClass("animated shake");
-    
+
     element.removeEventListener("animationend", _listenerFive);
   });
 };
 
 soberApp.welcomeBack = () => {
-  $(".fa-long-arrow-alt-left").on("click", function() {
-    $(".welcome").addClass("removeSection");
-    $("header").removeClass("removeSection");
+  $(document).on("click keydown", "#yes", function(event) {
+    if (
+      event.type === "click" ||
+      (event.type === "keydown" && (event.which === 13 || event.which === 32))
+    ) {
+      $(".backButton").on("click", function() {
+        $(".welcome").addClass("removeSection");
+        $("header").removeClass("removeSection");
+      });
+    }
   });
 };
 

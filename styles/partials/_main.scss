@@ -143,6 +143,10 @@ input[type="submit"] {
 .welcomeSub button {
   background-color: rgba(0,0,0,0);
   border: none;
+
+  &:hover, &:focus {
+    color: $accent;
+  }
 }
 
 .fa-long-arrow-alt-left {
