@@ -26,15 +26,15 @@ soberApp.clickYes = function() {
 };
 
 soberApp.yesAction = function() {
-  $("header").addClass("animated slideOutLeft");
+  $("header").addClass("animated slideOutLeft faster");
   $("body").addClass("displayOverflowHeader");
 
   let elementHeader = document.getElementById("header");
 
   elementHeader.addEventListener("animationend", function _listenerOne() {
-    $("header").removeClass("animated slideOutLeft");
+    $("header").removeClass("animated slideOutLeft faster");
     $("header").addClass("removeSection");
-    $(".welcome").addClass("animated slideInRight");
+    $(".welcome").addClass("animated slideInRight faster");
     $(".welcome").removeClass("removeSection");
 
     let elementWelcomeHeader = document.getElementById("welcome");
@@ -43,7 +43,7 @@ soberApp.yesAction = function() {
       "animationend",
       function _listenerTwo() {
         $("body").removeClass("displayOverflowHeader");
-        $(".welcome").removeClass("animated slideInRight");
+        $(".welcome").removeClass("animated slideInRight faster");
 
         elementWelcomeHeader.removeEventListener("animationend", _listenerTwo);
       }
@@ -72,16 +72,16 @@ soberApp.formSubmit = () => {
       // adds vice to the sentence below the time
       $(".viceSelection").html(`${vice}`);
 
-      $(".welcome").addClass("animated slideOutLeft");
+      $(".welcome").addClass("animated slideOutLeft faster");
 
       let elementWelcome = document.getElementById("welcome");
 
       elementWelcome.addEventListener(
         "animationend",
         function _listenerThree() {
-          $(".welcome").removeClass("animated slideOutLeft");
+          $(".welcome").removeClass("animated slideOutLeft faster");
           $(".welcome").addClass("removeSection");
-          $(".dashboard").addClass("animated slideInRight");
+          $(".dashboard").addClass("animated slideInRight faster");
           $(".dashboard").removeClass("removeSection");
 
           let elementDashboard = document.getElementById("dashboard");
@@ -90,7 +90,7 @@ soberApp.formSubmit = () => {
             "animationend",
             function _listenerFour() {
               $("body").removeClass("displayOverflowWelcome");
-              $(".dashboard").removeClass("animated slideInRight");
+              $(".dashboard").removeClass("animated slideInRight faster");
 
               elementDashboard.removeEventListener(
                 "animationend",
