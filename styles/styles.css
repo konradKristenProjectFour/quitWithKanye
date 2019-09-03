@@ -534,7 +534,6 @@ input[type="submit"]:hover, input[type="submit"]:focus, input[type="submit"]:act
   color: white;
   text-align: left;
   font-size: 5rem;
-  margin-top: 3vh;
 }
 
 .fa-long-arrow-alt-left:hover, .fa-long-arrow-alt-left:focus {
